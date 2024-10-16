@@ -1,18 +1,18 @@
-# Short Summary
+# Short Description
 
-In this repository, you can find the code I wrote to design and build my CV.
+In this repository, you can find the code I wrote to design and build my CV
 
-The resulting CV can be found online at the given link: https://arnauudg.github.io
+The resulting CV can be found online at this specific link: https://arnauudg.github.io
 
-# How to ...
+# How to 
 
-Requirements
+Requirements:
 
 <ul>
     <li>node v22.9.0</li>
 </ul>
 
-! Please don't modify the names of the files !<br>
+<hr>
 
 Clone the GitHub repository:
 
@@ -31,3 +31,5 @@ Execute the convertToPDF javascript script:
 ```
 node convertToPDF.js
 ```
+
+Voilà!
