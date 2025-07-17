@@ -3,106 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUEULETTE Arnaud - CV</title>
+    <title>Gueulette Arnaud - CV</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+        .section-title {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        .profile-image {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container mt-5">
     <!-- Header -->
-    <header class="text-center">
-        <img class="profile-image" src="https://arnauudg.github.io/asset/profile-picture.jpeg">
+    <header class="text-center mb-5">
+        <img class="profile-image" src="https://arnauudg.github.io/asset/profile-picture.jpeg" alt="Profile Photo">
         <h1>Gueulette Arnaud</h1>
-        <p class="lead">Data Engineer | Data Scientist | Machine Learning Engineer</p>
-        <p><strong>Location</strong>: Belgium, Brussels | <strong>Phone</strong>: +32 488 69 25 31 | <strong>Email</strong>: arnaud_gueulette@outlook.fr </p>
-        <p><a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank"><img src="https://arnauudg.github.io/asset/linkedin-mark.png" width="25" height="25"></a> | <a href="https://github.com/arnauudG" target="_blank"><img src="https://arnauudg.github.io/asset/github-mark.png" width="25" height="25"></a></p>
+        <p class="lead">Cloud Data Engineer | Data Platform & Governance Practitioner</p>
+        <p><strong>Location:</strong> Brussels, Belgium | <strong>Phone:</strong> +32 488 69 25 31 | <strong>Email:</strong> arnaud_gueulette@outlook.fr</p>
+        <p>
+            <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank"><img src="https://arnauudg.github.io/asset/linkedin-mark.png" width="25" height="25" alt="LinkedIn"></a>
+            &nbsp;
+            <a href="https://github.com/arnauudG" target="_blank"><img src="https://arnauudg.github.io/asset/github-mark.png" width="25" height="25" alt="GitHub"></a>
+        </p>
     </header>
 
     <!-- Professional Summary -->
     <section>
         <h2 class="section-title">Professional Summary</h2>
-        <p class="lead" style="font-size:18px">Data Consultant with 2 years of experience in planning, designing, building, testing, and deploying data systems, data pipelines, and machine learning models. Skilled in Python, SQL, Azure-AWS, and Docker. Proven ability to translate business needs into technical solutions, with expertise in developing some of them end-to-end. </p>
-    </section>
-
-    <!-- Technical Skills -->
-    <section>
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <ul>
-                    <li><strong>Languages</strong><br>Python, (T-)SQL, Java, Bash, HTML, CSS</li><br>
-                    <li><strong>Stack Tools</strong><br>Git, Pyenv, Poetry, Pandas-PySpark, PyTest - Pydantic, Optuna, Airflow-Mage, MLflow, DVC, Docker, Flask-Streamlit</li><br>
-                    <li><strong>Data Systems</strong><br>SQLite, MySQL, Microsoft SQL Server, PostgreSQL, ElasticSearch, MangoDB</li><br>
-                    <li><strong>Specialized Libraries & Frameworks</strong><br>Scikit-learn, SciPy, Statsmodels, PyTorch, Tensorflow, Keras, (Py)Spark, Psycopg2, SQLAlchemy, SparkMLib, Langchain, ...</li>  
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul>
-                    <li><strong>Cloud Technologies</strong></li>
-                    <ul>
-                        <li><strong>AWS</strong> - S3, EC2, RDS, Kinesis, Glue (Crawler), Athena, Lambda</li>
-                        <li><strong>Azure</strong> - Data Lake Storage, Virtual Machine, Data Factory, ML Studio</li>
-                        <li><strong>GCP</strong> - Cloud Storage, Compute Engine, BigQuery</li>
-                        <li><strong>Cloudera</strong> - Machine Learning</li>
-                    </ul>
-                    <br>
-                    <li><Strong>Data Visualization Tools</Strong><br>Power BI, Kibana, Grafana</li>
-                    <br>
-                    <li><Strong>Other Knowledges</Strong><br>Terraform, Rancher, Putty, Apache Kafka, Apache JMeter, Debezium, Power Automate, SAS, R, Excel, Power Query</li><br>
-                    </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Soft Skills -->
-    <section>
-        <h2 class="section-title">Soft Skills</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <ul>
-                    <li><strong>Languages:</strong> French (C2), English (C1), Dutch (B1) </li>
-                    <li><strong>Effective Communication</strong></li>
-                    <li><strong>Teamwork and Collaboration</strong></li>
-                    <li><strong>Business-Driven</strong></li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul>
-                    <li><strong>Critical Thinking</strong></li>
-                    <li><strong>Problem-Solving</strong></li>
-                    <li><strong>Continuous Learning</strong></li>
-                    <li><strong>Agile Methodology - Agile Development</strong></li>
-                </ul>
-            </div>
-        </div>
+        <p class="lead" style="font-size:18px;">
+            Data Consultant with 2.5 years of experience in designing and delivering data platforms, pipelines, and ML models. Specialized in Infrastructure as Code (IaC) using Terraform across AWS, with hands-on expertise in Python, SQL, and Docker. Proven track record in automating cloud infrastructure, building end-to-end data solutions, and translating business needs into scalable technical architectures.
+        </p>
     </section>
 
     <!-- Professional Experience -->
     <section class="professional-experience">
         <h2 class="section-title">Professional Experience</h2>
+
+        <div class="mb-4">
+            <h4>Data Consultant, <strong>Datashift NV</strong></h4>
+            <p><em>Feb 2025 – Present</em></p>
+            <ul>
+                <li>
+                    <h5>Scania CV AB – Data Governance Initiative<br><small>Feb 2025 – Present</small></h5>
+                    <p>
+                        Leading cloud data engineering efforts to support the integration of data governance practices at Scania, combining functional ownership of use case delivery with technical implementation in both Collibra and AWS. Responsibilities include designing and deploying end-to-end solutions using Collibra DQ, metadata ingestion, and custom workflows, while building scalable AWS-based services to automate governance processes, enable lineage tracking, and improve data quality monitoring. Deliverables include reusable components that accelerate the adoption of data governance across the organization.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
         <div class="mb-4">
             <h4>Data Consultant, Sopra Steria Benelux</h4>
-            <p><em>Sept 2022 - Present</em></p>
-            <ul><li><h5> Eu-LISA, Schengen Information System (SIS)<br><small>June 2024 - Present</small></h5>
-                    <ul>
-                        <li><p><strong>Software Development Engineer in Test (SDET)</strong><br>
-                            Enhanced and maintained euLISA's existing systems by developing, testing, debugging, and deploying updates to support EU border management and security. Collaborated with cross-functional teams to integrate system improvements and ensure performance compliance with EU standards. Documented technical processes to streamline future maintenance and deployments.
-                    </ul>
+            <p><em>Sept 2022 – Jan 2025</em></p>
+            <ul>
+                <li>
+                    <h5>eu-LISA – Schengen Information System (SIS)<br><small>June 2024 – Dec 2024</small></h5>
+                    <p>
+                        Enhanced and maintained eu-LISA's border security systems by developing, testing, debugging, and deploying improvements (PREPROD). Ensured system performance and compliance with EU standards. Collaborated across teams to integrate enhancements and documented processes to streamline future maintenance.
+                    </p>
                 </li>
-                <li><h5> EUROCONTROL, ISOBAR <br><small>March 2023 - October 2023</small></h5>
-                    <ul>
-                        <li><p><strong>Data Scientist - ML Engineer</strong><br>
-                        Planned, designed, developed, and deployed (online endpoint) a multi-step forecasting model to assist traffic operators in determining the optimal number of arrivals and departures (flights) per hour in a given airspace, considering weather conditions. This model reduced the time operators spent on manual decision-making, allowing them to focus on more valuable operational tasks.</p></li>
-                    </ul>
+                <li>
+                    <h5>EUROCONTROL – ISOBAR<br><small>March 2023 – Oct 2023</small></h5>
+                    <p>
+                        Designed and deployed a multi-step flight forecasting model (via online endpoint) to support air traffic operators in optimizing arrival/departure flow based on weather conditions. The model significantly reduced manual workload and enabled data-driven operational decisions.
+                    </p>
                 </li>
-                <li><h5>SOPRA STERIA<br><small>Sept 2022 - Present</small></h5>
-                    <ul><li><p><strong>Data Engineer - AI Engineer</strong><br>
-                        Researched and documented best practices for utilizing AI-powered solutions to support developers in their daily coding tasks throughout the software development lifecycle (SDLC) <em>e.g. AI-powered tools, prompt engineering, privacy risks, ...</em><br><br>
-                        Analyzed, measured, and assessed the feasibility of integrating an Elasticsearch search engine into an existing data system. The goal was to enhance the query capabilities and performance of the system through this integration.<br><br>
-                        Developed an end-to-end data pipeline to ingest energy consumption invoices (raw format: PDF), clean, process, and integrate them into the (SAS) IBM Envizi ESG Suite Platform. Delivered high-value insights and reports, significantly improving internal decision-making.<br><br>
-                        Created a proof-of-concept (POC) end-to-end data system to ingest energy consumption invoices (raw format: PDF), clean, and process the data to provide key performance indicators (KPIs) related to energy usage and costs. Delivered actionable insights and reports, enhancing internal decision-making.</li>
+                <li>
+                    <h5>Internal Projects, Sopra Steria<br><small>Sept 2022 – Jan 2025</small></h5>
+                    <ul style="margin-top: 5px;">
+                        <li>Researched and documented AI-powered development tools (e.g. Copilot, prompt engineering) to support SDLC tasks, highlighting productivity benefits and privacy risks.</li>
+                        <li>Evaluated and prototyped Elasticsearch integration into existing data systems to improve search performance and query expressiveness.</li>
+                        <li>Built an end-to-end pipeline to extract and process PDF-based energy consumption invoices into the SAS IBM Envizi ESG Suite, improving ESG reporting and internal analysis.</li>
+                        <li>Delivered a POC data system that extracted KPIs from energy invoice data, supporting sustainability and cost-efficiency decisions.</li>
                     </ul>
                 </li>
             </ul>
@@ -112,49 +107,116 @@
     <!-- Education -->
     <section>
         <h2 class="section-title">Education</h2>
-        <div class="mb-4">
-            <ul>
-                <li><h4>Master's Degree in Data Science</h4>
-                <p><em>Option Statistics - GPA 3.0</em></p>
-                <p>Université Catholique de Louvain, 2020 - 2023</p>
-                </li>
-            </ul>
-        </div>
-        <div class="mb-4">
-            <ul>
-                <li><h4>Bachelor's Degree in Business Engineering</h4>
-                <p><em>Option Computer Science and Operational Research - GPA 3.0</em></p>
-                <p>Université Catholique de Louvain, 2017 - 2020</p>
-                </ul>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <h4>Master's Degree in Data Science</h4>
+                <p><em>Option: Statistics | GPA: 3.0</em><br>Université Catholique de Louvain, 2020 – 2023</p>
+            </li>
+            <li>
+                <h4>Bachelor's Degree in Business Engineering</h4>
+                <p><em>Option: Computer Science and Operational Research | GPA: 3.0</em><br>Université Catholique de Louvain, 2017 – 2020</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <table style="width:100%; table-layout:fixed;">
+            <tr valign="top">
+                <td style="width:50%; padding-right:15px;">
+                    <strong>Programming & Scripting</strong><br>
+                    Python, SQL, Bash, Java<br><br>
+
+                    <strong>Data Engineering & Pipelines</strong><br>
+                    Airflow, PySpark, dbt, Pandas, MLflow, DVC, Poetry, Git<br><br>
+
+                    <strong>Data Systems</strong><br>
+                    PostgreSQL, Microsoft SQL Server, MySQL, MongoDB, Elasticsearch, Snowflake, Dremio<br><br>
+
+                    <strong>Libraries & Frameworks</strong><br>
+                    Scikit-learn, PyTorch, TensorFlow, SQLAlchemy, Pydantic, Optuna, Great Expectations
+                </td>
+                <td style="width:50%; padding-left:15px;">
+                    <strong>Cloud Platforms</strong><br>
+                    AWS: S3, EC2, RDS, Glue, Athena, Lambda, EventBridge, CloudWatch...<br>
+                    Azure: Data Lake, Data Factory, ML Studio<br>
+                    GCP: BigQuery, Cloud Storage<br><br>
+
+                    <strong>Infrastructure & DevOps</strong><br>
+                    Terraform, Docker, Rancher, GitLab CI, Helm, AWS EKS<br><br>
+
+                    <strong>Data Governance & BI</strong><br>
+                    Collibra (Lineage, Workflow, Integration), Collibra DQ, Power BI, Grafana<br><br>
+
+                    <strong>Other Tools</strong><br>
+                    Kafka, Debezium, Power Automate, Excel
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Soft Skills -->
+    <section>
+        <h2 class="section-title">Soft Skills</h2>
+        <table style="width:100%; table-layout:fixed;">
+            <tr valign="top">
+                <td style="width:50%; padding-right:15px;">
+                    <strong>Critical Thinking</strong><br>
+                    <strong>Problem Solving</strong><br>
+                    <strong>Continuous Learning</strong><br>
+                    <strong>Agile & Iterative Delivery</strong>
+                </td>
+                <td style="width:50%; padding-left:15px;">
+                    <strong>Teamwork & Collaboration</strong><br>
+                    <strong>Business-Driven Mindset</strong><br>
+                    <strong>Languages:</strong> French (C2), English (C1), Dutch (B1)
+                </td>
+            </tr>
+        </table>
     </section>
 
     <!-- Certifications -->
     <section>
         <h2 class="section-title">Certifications</h2>
-        <div class="mb-4">
-            <ul>
-                <li>AZ-900: Microsoft Azure Fundamentals</li>
-                <li>DP-900: Microsoft Azure Data Fundamentals</li>
-                <li>AI-900: Microsoft Azure AI Fundamentals</li>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <a href="https://www.credly.com/badges/2171017b-65fd-45a4-9120-e22b8e9c189e/public_url" target="_blank" rel="noopener noreferrer">
+                    Collibra Solution Architect Certification
+                </a>
+            </li>
+            <li>
+                <a href="https://www.credly.com/badges/80ce77bc-67aa-4782-858e-e15ca23e03c0/public_url" target="_blank" rel="noopener noreferrer">
+                    AWS Certified Developer – Associate (DVA-C02)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.credly.com/badges/97636c9a-e3a0-4292-bd86-166ebe2bea97/public_url" target="_blank" rel="noopener noreferrer">
+                    AWS Certified Solutions Architect – Associate (SAA-C03)
+                </a>
+            </li>
+        </ul>
     </section>
 
     <!-- Other Achievements -->
     <section>
         <h2 class="section-title">Other Achievements</h2>
-        <div class="mb-4">
-            <ul>
-                <li><h4 style="font-size:18px;"><a href="https://eudis-hackathon.eu/winners/">EU Defence Innovation Scheme (EUDIS) - Hackhaton 2024<a></a></h4> <p>Team EUnify - 1<sup>st</sup> (Belgium) - 3<sup>rd</sup> (Europe)</p></li>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <h4 style="font-size:18px;">
+                    <a href="https://eudis-hackathon.eu/winners/" target="_blank" rel="noopener noreferrer">
+                        EU Defence Innovation Scheme (EUDIS) – Hackathon 2024
+                    </a>
+                </h4>
+                <p>Team EUnify – 1<sup>st</sup> (Belgium) – 3<sup>rd</sup> (Europe)</p>
+            </li>
+        </ul>
     </section>
 
     <!-- Footer -->
-    <footer class=" footer text-center mt-5" style="padding-top:150px;">
-        <p>&copy; 2024 Gueulette Arnaud. All rights reserved.</p>
+    <footer class="footer text-center mt-5">
+        <hr>
+        <p class="mt-4 mb-2">&copy; 2024 Gueulette Arnaud. All rights reserved.</p>
     </footer>
 </div>
 </body>
