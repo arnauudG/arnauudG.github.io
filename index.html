@@ -6,31 +6,347 @@
     <title>Gueulette Arnaud - CV</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #fff;
-            color: #000;
+            font-family: 'Aptos', 'Aptos Body', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.4;
+        }
+        .container {
+            background-color: #161b22;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
         }
         .section-title {
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid #58a6ff;
             padding-bottom: 5px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #58a6ff;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         section {
-            margin-bottom: 50px;
+            margin-bottom: 25px;
         }
         .profile-image {
-            width: 150px;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
             border-radius: 50%;
             margin-bottom: 15px;
+            border: none;
+            box-shadow: none;
+        }
+        header {
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        header h1 {
+            color: #f0f6fc;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+        header .lead {
+            color: #8b949e;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        header p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
         }
         a {
             text-decoration: none;
-            color: #007bff;
+            color: #58a6ff;
+            transition: color 0.2s ease;
         }
         a:hover {
+            color: #79c0ff;
             text-decoration: underline;
+        }
+        header p a img {
+            vertical-align: middle;
+            display: inline-block;
+            border: none;
+            outline: none;
+        }
+        h4 {
+            color: #f0f6fc;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 3px;
+            font-size: 1.1rem;
+        }
+        h5 {
+            color: #c9d1d9;
+            font-weight: 600;
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+        ul {
+            padding-left: 18px;
+            margin-bottom: 8px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        .professional-experience ul li {
+            margin-bottom: 8px;
+        }
+        .professional-experience ul li ul {
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+        p {
+            margin-bottom: 8px;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        table td {
+            vertical-align: top;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+        }
+        em {
+            color: #8b949e;
+            font-style: normal;
+            font-size: 0.9rem;
+        }
+        strong {
+            color: #c9d1d9;
+            font-weight: 600;
+        }
+        small {
+            color: #6e7681;
+        }
+        footer {
+            padding-top: 15px;
+            color: #6e7681;
+            margin-top: 30px;
+        }
+        footer hr {
+            border-color: #30363d;
+        }
+        .mb-4 {
+            margin-bottom: 20px !important;
+        }
+        .mb-5 {
+            margin-bottom: 25px !important;
+        }
+        br {
+            margin-bottom: 0;
+        }
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+        }
+        .section-content.expanded {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        .collapsible-section {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 30px;
+        }
+        .collapsible-section::after {
+            content: '▶';
+            position: absolute;
+            right: 0;
+            color: #8b949e;
+            font-size: 0.8rem;
+            transition: color 0.2s ease, transform 0.3s ease;
+        }
+        .collapsible-section:hover::after {
+            color: #58a6ff;
+        }
+        .collapsible-section.expanded::after {
+            content: '▼';
+        }
+        .collapsible-company {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 30px;
+            margin-top: 10px;
+            margin-bottom: 3px;
+        }
+        .collapsible-company::after {
+            content: '▶';
+            position: absolute;
+            right: 0;
+            color: #8b949e;
+            font-size: 0.9rem;
+            transition: color 0.2s ease, transform 0.3s ease;
+        }
+        .collapsible-company:hover::after {
+            color: #58a6ff;
+        }
+        .collapsible-company.expanded::after {
+            content: '▼';
+        }
+        .company-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+        .company-content ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .company-content p {
+            margin-bottom: 5px;
+        }
+        .company-content.expanded {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        .collapsible-project {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 25px;
+        }
+        .collapsible-project::after {
+            content: '▶';
+            position: absolute;
+            right: 0;
+            color: #8b949e;
+            font-size: 0.75rem;
+            transition: color 0.2s ease, transform 0.3s ease;
+        }
+        .collapsible-project:hover::after {
+            color: #58a6ff;
+        }
+        .collapsible-project.expanded::after {
+            content: '▼';
+        }
+        .project-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+        .project-content.expanded {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        .collapsible-skill-category {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 20px;
+            display: inline-block;
+            color: #c9d1d9;
+        }
+        .collapsible-skill-category::after {
+            content: '▶';
+            position: absolute;
+            right: 0;
+            color: #8b949e;
+            font-size: 0.7rem;
+            transition: color 0.2s ease, transform 0.3s ease;
+        }
+        .collapsible-skill-category:hover::after {
+            color: #58a6ff;
+        }
+        .collapsible-skill-category.expanded::after {
+            content: '▼';
+        }
+        .skill-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+        .skill-content > ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+        .skill-content li {
+            margin-bottom: 3px;
+        }
+        .skill-content li > ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+        .skill-content.expanded {
+            max-height: 500px;
+            opacity: 1;
+        }
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+            .container {
+                background-color: #fff;
+                border: none;
+            }
+            .section-title {
+                color: #000;
+                border-bottom-color: #000;
+            }
+            header {
+                border-bottom-color: #000;
+            }
+            header h1 {
+                color: #000;
+            }
+            strong {
+                color: #000;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            .section-content {
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            .section-content.expanded {
+                max-height: none !important;
+            }
+            .company-content {
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            .project-content {
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            .skill-content {
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            .collapsible-section::after,
+            .collapsible-company::after,
+            .collapsible-project::after,
+            .collapsible-skill-category::after {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -43,10 +359,12 @@
         <h1>Gueulette Arnaud</h1>
         <p class="lead">Cloud Data Engineer | Data Platform & Governance Practitioner</p>
         <p><strong>Location:</strong> Brussels, Belgium | <strong>Phone:</strong> +32 488 69 25 31 | <strong>Email:</strong> arnaud_gueulette@outlook.fr</p>
-        <p>
-            <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank"><img src="https://arnauudg.github.io/asset/linkedin-mark.png" width="25" height="25" alt="LinkedIn"></a>
+        <p style="margin-top: 15px;">
+            <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank" rel="noopener noreferrer"><img src="https://arnauudg.github.io/asset/linkedin-mark.png" width="25" height="25" alt="LinkedIn" style="vertical-align: middle;"></a>
             &nbsp;
-            <a href="https://github.com/arnauudG" target="_blank"><img src="https://arnauudg.github.io/asset/github-mark.png" width="25" height="25" alt="GitHub"></a>
+            <a href="https://github.com/arnauudG" target="_blank" rel="noopener noreferrer"><img src="https://arnauudg.github.io/asset/github-mark.png" width="25" height="25" alt="GitHub" style="vertical-align: middle;"></a>
+            &nbsp;
+            <a href="https://substack.com/@arnaudgueulette?utm_source=user-menu" target="_blank" rel="noopener noreferrer"><img src="asset/substack-mark.png" width="30" height="30" alt="Substack" style="vertical-align: middle; display: inline-block;"></a>
         </p>
     </header>
 
@@ -54,243 +372,691 @@
     <!-- Professional Summary -->
     <section>
         <h2 class="section-title">Professional Summary</h2>
-        <p class="lead" style="font-size:18px;">
-            Data Consultant with over three years of experience designing and delivering data systems, platforms, pipelines, and machine learning (ML) models. 
-            Specialized in <strong>Infrastructure as Code (IaC)</strong> using <strong>Terraform</strong> on <strong>AWS</strong>, with hands-on expertise in 
-            <strong>Python</strong>, <strong>SQL</strong>, and <strong>Docker</strong>. Proven track record in automating cloud infrastructure, building 
-            end-to-end data solutions, and translating business needs into scalable technical architectures.
+        <p>
+            I design and scale modern data platforms by embedding governance, data quality, and operating models directly into engineering workflows, enabling organizations to treat governance as a driver of scale rather than a constraint.
         </p>
     </section>
 
     <!-- Professional Experience -->
     <section class="professional-experience">
-        <h2 class="section-title">Professional Experience</h2>
-    
-        <div class="mb-4">
-            <h4>Data Consultant, <strong>Datashift NV</strong></h4>
+        <h2 class="section-title collapsible-section">Professional Experience</h2>
+        <div class="section-content">
+            <h4 class="collapsible-company">Data Consultant, <strong><a href="https://www.datashift.eu" target="_blank" rel="noopener noreferrer">Datashift NV</a></strong></h4>
             <p><em>Feb 2025 – Present</em></p>
+            <div class="company-content">
             <ul>
                 <li>
-                    <h5>UCB – Data Enablement Team<br><small>Oct 2025 – Present</small></h5>
-                    <ul style="margin-top: 5px;">
+                        <h5 class="collapsible-project"><a href="https://www.ucb.com" target="_blank" rel="noopener noreferrer">UCB</a> – Data Enablement Team<br><small>Oct 2025 – Present</small></h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
                         <li>
                             Supporting the <strong>Data Quality team</strong> in developing and maintaining <strong>SQL-based data quality checks</strong> across multiple domains.
-                            Focused on improving the <strong>efficiency, scalability, and maintainability</strong> of rule development by introducing structured 
-                            templates, reusable query logic, and consistent validation standards. Actively collaborating with data engineers and analysts 
-                            to ensure alignment between business rules and technical implementations, enhancing overall data reliability and trust.
+                                    Improved the <strong>efficiency, scalability, and maintainability</strong> of rule development by introducing <strong>structured templates</strong>, 
+                                    <strong>reusable query logic</strong>, and <strong>consistent validation standards</strong>. Collaborated with data engineers and analysts 
+                                    to align business rules with technical implementations, enhancing data reliability and trust.
+                                </li>
+                                <li>
+                                    Leading an ongoing initiative to improve the <strong>completeness</strong>, <strong>consistency</strong>, and <strong>integration</strong> of product 
+                                    reference data across <strong>Snowflake</strong> and external systems. This includes analyzing multiple <strong>Snowflake reference tables</strong>, 
+                                    uncovering business logic behind manual data entry processes, resolving missing or inconsistent <strong>product identifiers</strong>, and 
+                                    collaborating with domain experts to validate <strong>product catalog structures</strong>. Designing and testing <strong>scalable matching frameworks</strong>—combining 
+                                    <strong>exact</strong>, <strong>hierarchical</strong>, and <strong>fuzzy-matching techniques</strong>—to maximise enrichment coverage between datasets and strengthen 
+                                    downstream <strong>data quality</strong>, <strong>reporting accuracy</strong>, and <strong>governance</strong>.
+                                </li>
+                                <li>
+                                    Currently leading a <strong>proof-of-concept</strong> to evaluate the <strong>Collibra Model Context Protocol (MCP)</strong> as a discovery and interaction layer 
+                                    for governance assets. The initiative focuses on improving <strong>data discoverability</strong>, <strong>search relevance</strong>, and <strong>contextual access</strong> to 
+                                    <strong>business glossaries</strong>, <strong>data assets</strong>, and <strong>quality rules</strong> by enabling <strong>natural-language querying</strong> across Collibra metadata. 
+                                    The POC explores <strong>secure</strong>, <strong>role-aware access patterns</strong> and integration with <strong>engineering workflows</strong> and tooling, with the objective 
+                                    of reducing friction between data consumers and governance platforms while increasing <strong>adoption</strong> and <strong>trust</strong> in governed data.
                         </li>
                     </ul>
+                        </div>
                 </li>
-                <br>
-                <li>
-                    <h5>Scania CV – Data Governance Initiative<br><small>Feb 2025 – Present</small></h5>
-                    <ul style="margin-top: 5px;">
+                    <li>
+                        <h5 class="collapsible-project"><a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> – Data Governance Initiative<br><small>Feb 2025 – Present</small></h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
                         <li>
-                            Leading cloud data engineering work to embed <strong>data governance</strong> and <strong>data quality</strong> practices at Scania, combining
-                            functional ownership of use-case delivery with hands-on implementation across <strong>Collibra</strong> and <strong>AWS</strong> (DEV, PROD).
-                            Designing and deploying end-to-end solutions using <strong>Collibra Data Quality</strong>, metadata ingestion pipelines, and custom
-                            BPMN workflows; building scalable AWS services (<strong>Lambda</strong>, <strong>EventBridge</strong>, <strong>RDS</strong>, <strong>EKS</strong>) to automate governance processes,
-                            enable lineage tracking, and raise the reliability of data quality monitoring.
+                                    Leading <strong>cloud data engineering initiatives</strong> to embed <strong>data governance</strong> and <strong>data quality</strong> practices directly into 
+                                    <strong>engineering workflows</strong> (governance by design) at Scania. Combining <strong>functional ownership</strong> with hands-on implementation across 
+                                    <strong>Collibra</strong> and <strong>AWS</strong>. Designed and deployed <strong>end-to-end solutions</strong> leveraging <strong>Collibra Data Quality</strong>, 
+                                    <strong>metadata ingestion pipelines</strong>, and <strong>custom BPMN workflows</strong>; built scalable AWS services (<strong>Lambda</strong>, <strong>EventBridge</strong>, 
+                                    <strong>RDS</strong>, <strong>EKS</strong>) to automate governance processes, enable <strong>lineage tracking</strong>, and improve the reliability of 
+                                    <strong>data quality monitoring</strong>.
                         </li>
                     </ul>
+                        </div>
                 </li>
-                <br>
                 <li>
-                    <h5>Datashift NV – Internal Initiatives<br><small>Feb 2025 – Present</small></h5>
-                    <ul style="margin-top: 5px;">
+                        <h5 class="collapsible-project"><a href="https://www.datashift.eu" target="_blank" rel="noopener noreferrer">Datashift NV</a> – Internal Initiatives<br><small>Feb 2025 – Present</small></h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
                         <li>
-                            Developed an automated <strong>Soda-Agent</strong> deployment framework on <strong>AWS</strong> with <strong>Terraform</strong> and <strong>Terragrunt</strong>, enabling
-                            setup in minutes through reusable Infrastructure-as-Code modules.
+                                    Developed an automated <strong>Soda Agent</strong> deployment framework on <strong>AWS</strong> using <strong>Terraform</strong> and <strong>Terragrunt</strong>, 
+                                    enabling <strong>Infrastructure-as-Code</strong> deployments in minutes through reusable, modular components.
                         </li>
                         <li>
-                            Designed and implemented a <strong>Data Quality & Governance</strong> demo environment integrating <strong>Soda</strong>, <strong>dbt</strong>,
-                            <strong>Airflow</strong>, <strong>Superset</strong>, and <strong>Python</strong> to orchestrate automated validations and analytics pipelines.
+                                    Designed and implemented a <strong>Data Quality & Governance</strong> demo environment integrating <strong>Soda</strong>, <strong>dbt</strong>, <strong>Airflow</strong>, 
+                                    <strong>Superset</strong>, and <strong>Python</strong> to orchestrate automated validations and analytics pipelines.
                         </li>
                         <li>
-                            Integrated <strong>Collibra</strong> as the governance backbone, linking data quality metrics and lineage to catalog assets
-                            for clearer ownership and lifecycle visibility.
+                                    Integrated <strong>Collibra</strong> as the governance backbone, linking <strong>data quality metrics</strong> and <strong>lineage</strong> to catalog assets 
+                                    to improve <strong>ownership</strong>, <strong>traceability</strong>, and <strong>lifecycle visibility</strong>.
                         </li>
                         <li>
-                            Demonstrated end-to-end <strong>observability</strong> and compliance readiness via practical pipelines, establishing
-                            reusable patterns and best practices for client engagements.
+                                    Established <strong>end-to-end observability</strong> and <strong>compliance-readiness</strong> patterns, creating reusable frameworks 
+                                    and best practices for client engagements.
                         </li>
                     </ul>
+                        </div>
                 </li>
             </ul>
         </div>
     
-        <div class="mb-4">
-            <h4>Data Consultant, <strong>Sopra Steria Benelux</strong></h4>
+            <h4 class="collapsible-company">Data Consultant, <strong><a href="https://www.soprasteria.be" target="_blank" rel="noopener noreferrer">Sopra Steria Benelux</a></strong></h4>
             <p><em>Sept 2022 – Jan 2025</em></p>
+            <div class="company-content">
             <ul>
                 <li>
-                    <h5>eu-LISA – Schengen Information System (SIS)<br><small>June 2024 – Dec 2024</small></h5>
-                    <ul style="margin-top: 5px;">
+                        <h5 class="collapsible-project"><a href="https://www.eulisa.europa.eu" target="_blank" rel="noopener noreferrer">eu-LISA</a> – Schengen Information System (SIS)<br><small>June 2024 – Dec 2024</small></h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
                         <li>
-                            Enhanced and maintained eu-LISA’s border-security systems by developing, testing, and deploying
-                            improvements in <strong>PREPROD</strong>, ensuring performance, reliability, and EU-standard compliance. Collaborated with
-                            cross-functional teams to integrate changes and produced technical documentation to streamline future maintenance.
+                                    Enhanced and maintained eu-LISA's <strong>border-security systems</strong> by developing, testing, and deploying improvements in <strong>PREPROD</strong>, 
+                                    ensuring <strong>performance</strong>, <strong>reliability</strong>, and <strong>EU-standard compliance</strong>. Collaborated with cross-functional teams 
+                                    to integrate changes and produced <strong>technical documentation</strong> to streamline future maintenance.
                         </li>
                     </ul>
+                        </div>
                 </li>
-                <br>
-                <li>
-                    <h5>Eurocontrol – ISOBAR<br><small>March 2023 – Oct 2023</small></h5>
-                    <ul style="margin-top: 5px;">
+                    <li>
+                        <h5 class="collapsible-project"><a href="https://www.eurocontrol.int" target="_blank" rel="noopener noreferrer">Eurocontrol</a> – ISOBAR<br><small>March 2023 – Oct 2023</small></h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
                         <li>
-                            Designed and deployed a multi-step flight-forecasting model (online <strong>API</strong> endpoint) to help operators
-                            optimize arrival/departure flows under varying weather conditions, reducing manual workload and enabling
-                            data-driven operational decisions.
+                                    Designed and deployed a <strong>multi-step flight-forecasting model</strong> as an online <strong>API endpoint</strong> to help operators 
+                                    optimize <strong>arrival/departure flows</strong> under varying weather conditions, reducing manual workload and enabling 
+                                    <strong>data-driven operational decisions</strong>.
                         </li>
                     </ul>
+                        </div>
                 </li>
-                <br>
                 <li>
-                    <h5>Sopra Steria Benelux – Internal Initiatives<br><small>Sept 2022 – Jan 2025</small></h5>
-                    <ul style="margin-top: 5px;">
+                        <h5 class="collapsible-project"><a href="https://www.soprasteria.be" target="_blank" rel="noopener noreferrer">Sopra Steria Benelux</a> – Internal Initiatives<br><small>Sept 2022 – Jan 2025</small></h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
                         <li>
-                            Researched and documented <strong>AI-assisted development</strong> tools (e.g., GitHub Copilot, prompt engineering) to
-                            support SDLC tasks, evaluating productivity gains and privacy implications.
+                                    Researched and documented <strong>AI-assisted development</strong> tools (<strong>GitHub Copilot</strong>, <strong>prompt engineering</strong>) 
+                                    to support <strong>SDLC</strong> tasks, evaluating productivity gains and privacy implications.
                         </li>
                         <li>
-                            Prototyped <strong>Elasticsearch</strong> integration into existing data systems to improve search performance and query expressiveness.
+                                    Prototyped <strong>Elasticsearch</strong> integration into existing data systems to improve <strong>search performance</strong> and <strong>query expressiveness</strong>.
                         </li>
                         <li>
-                            Built an end-to-end pipeline to extract and process PDF-based energy-consumption invoices into the
-                            <strong>SAS IBM Envizi ESG Suite</strong>, improving ESG reporting and internal analytics.
+                                    Built an <strong>end-to-end pipeline</strong> to extract and process <strong>PDF-based energy-consumption invoices</strong> into the 
+                                    <strong>SAS IBM Envizi ESG Suite</strong>, improving <strong>ESG reporting</strong> and internal analytics.
                         </li>
                         <li>
-                            Delivered a PoC data system surfacing energy-invoice <strong>KPIs</strong> to support sustainability tracking and cost-efficiency decisions.
+                                    Delivered a <strong>PoC data system</strong> surfacing energy-invoice <strong>KPIs</strong> to support <strong>sustainability tracking</strong> and cost-efficiency decisions.
                         </li>
                     </ul>
+                        </div>
                 </li>
             </ul>
+            </div>
         </div>
     </section>
 
     <!-- Education -->
     <section>
-        <h2 class="section-title">Education</h2>
-        <ul>
-            <li>
-                <h4>Master's Degree in Data Science</h4>
-                <p><em>Option: Statistics | GPA: 3.0</em><br>Université Catholique de Louvain, 2020 – 2023</p>
-            </li>
-            <li>
-                <h4>Bachelor's Degree in Business Engineering</h4>
-                <p><em>Option: Computer Science and Operational Research | GPA: 3.0</em><br>Université Catholique de Louvain, 2017 – 2020</p>
-            </li>
+        <h2 class="section-title collapsible-section">Education</h2>
+        <div class="section-content">
+            <h4 class="collapsible-company">Master's Degree in Data Science, <a href="https://www.uclouvain.be/en" target="_blank" rel="noopener noreferrer">Université Catholique de Louvain</a></h4>
+            <p><em>2020 – 2023</em></p>
+            <div class="company-content">
+                <ul>
+                    <li>Master's Degree in <strong>Data Science</strong> with specialization in <strong>Statistics</strong>.<br>GPA: 3.0</li>
+                </ul>
+            </div>
+            
+            <h4 class="collapsible-company">Bachelor's Degree in Business Engineering, <a href="https://www.uclouvain.be/en" target="_blank" rel="noopener noreferrer">Université Catholique de Louvain</a></h4>
+            <p><em>2017 – 2020</em></p>
+            <div class="company-content">
+                <ul>
+                    <li>Bachelor's Degree in <strong>Business Engineering</strong> with specialization in <strong>Computer Science</strong> and <strong>Operational Research</strong>.<br>GPA: 3.0</li>
         </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Technical Skills -->
     <section>
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title collapsible-section">Technical Skills</h2>
+        <div class="section-content">
         <table style="width:100%; table-layout:fixed;">
             <tr valign="top">
                 <td style="width:50%; padding-right:15px;">
-                    <strong>Programming & Scripting</strong><br>
-                    Python, SQL, Linux/Bash, Java<br><br>
-
-                    <strong>Data Engineering & Pipelines</strong><br>
-                    Airflow, pandas/pySpark, dbt, DVC, MLflow<br><br>
-
-                    <strong>Data Systems</strong><br>
-                    PostgreSQL, Microsoft SQL Server, MySQL, MongoDB, Elasticsearch, Snowflake, Dremio<br><br>
-
-                    <strong>Libraries & Frameworks</strong><br>
-                    Scikit-learn, PyTorch, TensorFlow, SQLAlchemy, Pydantic, PyTest, Flask, FastAPI, ...
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Programming & Scripting</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>Linux/Bash</li>
+                                <li>Java</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Data Engineering & Pipelines</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li>Airflow</li>
+                                <li>pandas/pySpark</li>
+                                <li>dbt</li>
+                                <li>DVC</li>
+                                <li>MLflow</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Data Systems</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li>PostgreSQL</li>
+                                <li>Microsoft SQL Server</li>
+                                <li>MySQL</li>
+                                <li>MongoDB</li>
+                                <li>Elasticsearch</li>
+                                <li>Snowflake</li>
+                                <li>Dremio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Libraries & Frameworks</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li>Scikit-learn</li>
+                                <li>PyTorch</li>
+                                <li>TensorFlow</li>
+                                <li>SQLAlchemy</li>
+                                <li>Pydantic</li>
+                                <li>PyTest</li>
+                                <li>Flask</li>
+                                <li>FastAPI</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                    </div>
                 </td>
                 <td style="width:50%; padding-left:15px;">
-                    <strong>Cloud Platforms</strong><br>
-                    AWS: S3, EC2, RDS, Glue, Athena, Lambda, Lake Formation, EventBridge, EKS, CloudWatch...<br>
-                    Azure: Data Lake, Data Factory, ML Studio<br><br>
-
-                    <strong>Dev, Infrastructure & Ops</strong><br>
-                    Terraform, Terragrunt, Docker, Rancher, GitLab CI, Github Actions, Helm<br><br>
-
-                    <strong>Data Governance, Quality & BI</strong><br>
-                    Collibra: Catalog, Lineage, Workflow, Integration, Collibra DQ, Soda, Great Expectations, Power BI, Grafana, Superset, Kibana<br><br>
-
-                    <strong>Other Tools</strong><br>
-                    Kafka, Debezium, Power Automate, ...
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Cloud Platforms</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li><strong style="color: #c9d1d9;">AWS</strong>
+                                    <ul>
+                                        <li>S3</li>
+                                        <li>EC2</li>
+                                        <li>RDS</li>
+                                        <li>Glue</li>
+                                        <li>Athena</li>
+                                        <li>Lambda</li>
+                                        <li>Lake Formation</li>
+                                        <li>EventBridge</li>
+                                        <li>EKS</li>
+                                        <li>CloudWatch</li>
+                                        <li>...</li>
+                                    </ul>
+                                </li>
+                                <li><strong style="color: #c9d1d9;">Azure</strong>
+                                    <ul>
+                                        <li>Data Lake</li>
+                                        <li>Data Factory</li>
+                                        <li>ML Studio</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Dev, Infrastructure & Ops</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li>Terraform</li>
+                                <li>Terragrunt</li>
+                                <li>Docker</li>
+                                <li>Rancher</li>
+                                <li>GitLab CI</li>
+                                <li>Github Actions</li>
+                                <li>Helm</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Data Governance, Quality & BI</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li><strong style="color: #c9d1d9;">Collibra</strong>
+                                    <ul>
+                                        <li>Catalog</li>
+                                        <li>Lineage</li>
+                                        <li>Workflow</li>
+                                        <li>Integration</li>
+                                        <li>Collibra DQ</li>
+                                    </ul>
+                                </li>
+                                <li>Soda</li>
+                                <li>Great Expectations</li>
+                                <li>Power BI</li>
+                                <li>Grafana</li>
+                                <li>Superset</li>
+                                <li>Kibana</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong class="collapsible-skill-category">Other Tools</strong>
+                        <div class="skill-content">
+                            <ul>
+                                <li>Kafka</li>
+                                <li>Debezium</li>
+                                <li>Power Automate</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </table>
+        </div>
     </section>
 
     <!-- Soft Skills -->
     <section>
-        <h2 class="section-title">Soft Skills</h2>
+        <h2 class="section-title collapsible-section">Soft Skills</h2>
+        <div class="section-content">
         <table style="width:100%; table-layout:fixed;">
             <tr valign="top">
-                <td style="width:50%; padding-right:15px;">
-                    <strong>Critical Thinking</strong><br>
-                    <strong>Problem Solving</strong><br>
-                    <strong>Continuous Learning</strong><br>
-                    <strong>Agile & Iterative Delivery</strong>
+                <td style="width:50%; padding-right:15px; line-height: 2.0;">
+                    <span style="color: #c9d1d9; font-weight: 600;">Critical Thinking</span><br>
+                    <span style="color: #c9d1d9; font-weight: 600;">Problem Solving</span><br>
+                    <span style="color: #c9d1d9; font-weight: 600;">Continuous Learning</span><br>
+                    <span style="color: #c9d1d9; font-weight: 600;">Agile & Iterative Delivery</span>
                 </td>
-                <td style="width:50%; padding-left:15px;">
-                    <strong>Teamwork & Collaboration</strong><br>
-                    <strong>Business-Driven Mindset</strong><br>
-                    <strong>Languages:</strong> French (C2), English (C1), Dutch (B1)
+                <td style="width:50%; padding-left:15px; line-height: 2.0;">
+                    <span style="color: #c9d1d9; font-weight: 600;">Teamwork & Collaboration</span><br>
+                    <span style="color: #c9d1d9; font-weight: 600;">Business-Driven Mindset</span><br>
+                    <span style="color: #c9d1d9; font-weight: 600;">Languages:</span> French (C2), English (C1), Dutch (B1)
                 </td>
             </tr>
         </table>
+        </div>
     </section>
 
     <!-- Certifications -->
     <section>
-        <h2 class="section-title">Certifications</h2>
+        <h2 class="section-title collapsible-section">Certifications</h2>
+        <div class="section-content">
+            <h4 class="collapsible-company" style="color: #f0f6fc;">Collibra</h4>
+            <div class="company-content">
         <ul>
             <li>
+                        <h5 class="collapsible-project">
                 <a href="https://www.credly.com/badges/2171017b-65fd-45a4-9120-e22b8e9c189e/public_url" target="_blank" rel="noopener noreferrer">
                     Collibra Solution Architect Certification
                 </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>Collibra Solution Architect</strong> certification demonstrating expertise in data governance platform design and implementation.
+                                </li>
+                            </ul>
+                        </div>
             </li>
+                </ul>
+            </div>
+            
+            <h4 class="collapsible-company" style="color: #f0f6fc;">AWS</h4>
+            <div class="company-content">
+                <ul>
             <li>
+                        <h5 class="collapsible-project">
                 <a href="https://www.credly.com/badges/80ce77bc-67aa-4782-858e-e15ca23e03c0/public_url" target="_blank" rel="noopener noreferrer">
                     AWS Certified Developer – Associate (DVA-C02)
                 </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>AWS Certified Developer – Associate</strong> demonstrating proficiency in developing and maintaining applications on AWS.
+                                </li>
+                            </ul>
+                        </div>
             </li>
             <li>
+                        <h5 class="collapsible-project">
                 <a href="https://www.credly.com/badges/97636c9a-e3a0-4292-bd86-166ebe2bea97/public_url" target="_blank" rel="noopener noreferrer">
                     AWS Certified Solutions Architect – Associate (SAA-C03)
                 </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>AWS Certified Solutions Architect – Associate</strong> demonstrating ability to design distributed systems on AWS.
+                                </li>
+                            </ul>
+                        </div>
             </li>
             <li>
+                        <h5 class="collapsible-project">
                 <a href="https://www.credly.com/badges/d8a9d800-29b2-4eb2-a0aa-d7df434e08b2/public_url" target="_blank" rel="noopener noreferrer">
                     AWS Certified CloudOps Engineer – Associate (SOA-C03)
                 </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>AWS Certified CloudOps Engineer – Associate</strong> demonstrating expertise in cloud operations and system reliability.
+                                </li>
+                            </ul>
+                        </div>
             </li>
             <li>
+                        <h5 class="collapsible-project">
                 <a href="https://www.credly.com/badges/5142ab6f-6733-4ab8-b7c5-8d3f767d15e6/public_url" target="_blank" rel="noopener noreferrer">
                     AWS Certified Data Engineer – Associate (DEA-C01)
                 </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>AWS Certified Data Engineer – Associate</strong> demonstrating proficiency in designing and implementing data engineering solutions on AWS.
+                                </li>
+                            </ul>
+                        </div>
             </li>
         </ul>
+            </div>
+            
+            <h4 class="collapsible-company" style="color: #f0f6fc;">Soda</h4>
+            <div class="company-content">
+                <ul>
+                    <li>
+                        <h5 class="collapsible-project">
+                            <a href="https://www.virtualbadge.io/certificate-validator?credential=b0a12156-245b-4d4d-b64d-b518037ee33e" target="_blank" rel="noopener noreferrer">
+                                Soda Certified: Cloud Fundamentals
+                            </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>Soda Certified: Cloud Fundamentals</strong> demonstrating proficiency in cloud-based data quality fundamentals.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <h4 class="collapsible-company" style="color: #f0f6fc;">SAS</h4>
+            <div class="company-content">
+                <ul>
+                    <li>
+                        <h5 class="collapsible-project">
+                            <a href="https://www.credly.com/badges/83f50af0-4721-4eff-8110-d8c27c21245e/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                                SAS Certified Specialist: Base Programming Using SAS 9.4
+                            </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>SAS Certified Specialist: Base Programming Using SAS 9.4</strong> demonstrating proficiency in SAS base programming fundamentals.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <h4 class="collapsible-company" style="color: #f0f6fc;">Microsoft</h4>
+            <div class="company-content">
+                <ul>
+                    <li>
+                        <h5 class="collapsible-project">
+                            <a href="https://www.credly.com/badges/342bbe8b-e7c9-48a2-8047-0f5615310b11/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                                Microsoft Certified: Azure AI Fundamentals
+                            </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>Microsoft Certified: Azure AI Fundamentals</strong> demonstrating foundational knowledge of AI concepts and Azure AI services.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="collapsible-project">
+                            <a href="https://www.credly.com/badges/840565bc-1c5e-424a-b625-822c11a114a4/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                                Microsoft Certified: Azure Data Fundamentals
+                            </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>Microsoft Certified: Azure Data Fundamentals</strong> demonstrating foundational knowledge of core data concepts and Azure data services.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="collapsible-project">
+                            <a href="https://www.credly.com/badges/2b9c2958-b12d-4d21-9e7a-038561cd7eed/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                                Microsoft Certified: Azure Fundamentals
+                            </a>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    <strong>Microsoft Certified: Azure Fundamentals</strong> demonstrating foundational knowledge of cloud services and Azure core concepts.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Other Achievements -->
     <section>
-        <h2 class="section-title">Other Achievements</h2>
+        <h2 class="section-title collapsible-section">Other Achievements</h2>
+        <div class="section-content">
+            <h4 class="collapsible-company" style="color: #f0f6fc;">Hackathon</h4>
+            <div class="company-content">
         <ul>
             <li>
-                <h4 style="font-size:18px;">
+                        <h5 class="collapsible-project">
                     <a href="https://eudis-hackathon.eu/winners/" target="_blank" rel="noopener noreferrer">
                         EU Defence Innovation Scheme (EUDIS) – Hackathon 2024
                     </a>
-                </h4>
-                <p>Team EUnify – 1<sup>st</sup> (Belgium) – 3<sup>rd</sup> (Europe)</p>
+                        </h5>
+                        <div class="project-content">
+                            <ul style="margin-top: 2px;">
+                                <li>
+                                    Team EUnify – 1<sup>st</sup> (Belgium) – 3<sup>rd</sup> (Europe)
+                                </li>
+                            </ul>
+                        </div>
             </li>
         </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer text-center mt-5">
-        <hr>
         <p class="mt-4 mb-2">&copy; 2025 Gueulette Arnaud. All rights reserved.</p>
     </footer>
 </div>
+
+<script>
+    // Add toggle functionality to collapsible sections
+    document.addEventListener('DOMContentLoaded', function() {
+        // Main sections (Professional Experience, Education, etc.)
+        const collapsibleSections = document.querySelectorAll('.collapsible-section');
+        
+        collapsibleSections.forEach(section => {
+            const content = section.nextElementSibling;
+            
+            // Initialize as collapsed
+            section.classList.remove('expanded');
+            content.classList.remove('expanded');
+            
+            section.addEventListener('click', function() {
+                const isExpanded = this.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    // Collapse
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    // Force reflow
+                    content.offsetHeight;
+                    this.classList.remove('expanded');
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = '0';
+                } else {
+                    // Expand
+                    this.classList.add('expanded');
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    setTimeout(() => {
+                        content.classList.add('expanded');
+                        content.style.maxHeight = '';
+                    }, 10);
+                }
+            });
+        });
+        
+        // Company sections (Datashift NV, Sopra Steria Benelux)
+        const collapsibleCompanies = document.querySelectorAll('.collapsible-company');
+        
+        collapsibleCompanies.forEach(company => {
+            // Find the company-content div (it's after the <p> with dates)
+            let sibling = company.nextElementSibling;
+            while (sibling && !sibling.classList.contains('company-content')) {
+                sibling = sibling.nextElementSibling;
+            }
+            const content = sibling;
+            
+            if (!content) return; // Safety check
+            
+            // Initialize as collapsed
+            company.classList.remove('expanded');
+            content.classList.remove('expanded');
+            
+            company.addEventListener('click', function(e) {
+                // Don't trigger if clicking on the link
+                if (e.target.tagName === 'A') return;
+                
+                const isExpanded = this.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    // Collapse
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    content.offsetHeight;
+                    this.classList.remove('expanded');
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = '0';
+                } else {
+                    // Expand
+                    this.classList.add('expanded');
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    setTimeout(() => {
+                        content.classList.add('expanded');
+                        content.style.maxHeight = '';
+                    }, 10);
+                }
+            });
+        });
+        
+        // Project/Client sections (UCB, Scania CV, etc.)
+        const collapsibleProjects = document.querySelectorAll('.collapsible-project');
+        
+        collapsibleProjects.forEach(project => {
+            const content = project.nextElementSibling;
+            
+            // Initialize as collapsed
+            project.classList.remove('expanded');
+            content.classList.remove('expanded');
+            
+            project.addEventListener('click', function(e) {
+                // Don't trigger if clicking on the link
+                if (e.target.tagName === 'A') return;
+                
+                const isExpanded = this.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    // Collapse
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    content.offsetHeight;
+                    this.classList.remove('expanded');
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = '0';
+                } else {
+                    // Expand
+                    this.classList.add('expanded');
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    setTimeout(() => {
+                        content.classList.add('expanded');
+                        content.style.maxHeight = '';
+                    }, 10);
+                }
+            });
+        });
+        
+        // Skill category sections (Programming & Scripting, Data Engineering, etc.)
+        const collapsibleSkills = document.querySelectorAll('.collapsible-skill-category');
+        
+        collapsibleSkills.forEach(skill => {
+            const content = skill.nextElementSibling;
+            
+            // Initialize as collapsed
+            skill.classList.remove('expanded');
+            content.classList.remove('expanded');
+            
+            skill.addEventListener('click', function() {
+                const isExpanded = this.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    // Collapse
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    content.offsetHeight;
+                    this.classList.remove('expanded');
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = '0';
+                } else {
+                    // Expand
+                    this.classList.add('expanded');
+                    const height = content.scrollHeight;
+                    content.style.maxHeight = height + 'px';
+                    setTimeout(() => {
+                        content.classList.add('expanded');
+                        content.style.maxHeight = '';
+                    }, 10);
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
