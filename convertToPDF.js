@@ -290,13 +290,14 @@ class PDFGenerator {
     try {
       await this.page.evaluate(() => {
         // Convert absolute GitHub Pages URLs to relative paths for PDF generation
+        // Relative paths work with file:// protocol when HTML is loaded from file system
         const allImages = document.querySelectorAll('img');
         allImages.forEach((img) => {
           if (img.src && img.src.includes('arnauudg.github.io/assets/')) {
             // Extract the filename from the absolute URL
             const filename = img.src.split('/assets/')[1];
-            // Convert to relative path
-            img.src = `assets/${filename}`;
+            // Convert to relative path (works with file:// protocol)
+            img.src = `./assets/${filename}`;
           }
         });
 
@@ -425,7 +426,7 @@ class PDFGenerator {
                 const strongTags = innerDiv.querySelectorAll('strong');
                 strongTags.forEach((strong) => {
                   if (strong.style.display === 'inline-block') {
-                    strong.style.color = '#0066cc';
+                    strong.style.color = '#000000'; // Black for AWS:, Azure:, Collibra: labels
                   }
                 });
               });
@@ -434,7 +435,7 @@ class PDFGenerator {
             const strongTags = section.querySelectorAll('strong');
             strongTags.forEach((strong) => {
               if (strong.textContent.includes(':') || strong.textContent.includes('AWS') || strong.textContent.includes('Azure') || strong.textContent.includes('Collibra')) {
-                strong.style.color = '#0066cc'; // Dark blue for sub-category labels
+                strong.style.color = '#000000'; // Black for sub-category labels (AWS:, Azure:, Collibra:)
               }
             });
           }
@@ -597,10 +598,18 @@ class PDFGenerator {
           link.style.color = '#0066cc';
         });
 
-        // Change header border if exists
+        // Change header border if exists and reduce margin for PDF
         const header = document.querySelector('header');
         if (header) {
           header.style.borderBottomColor = '#000000';
+          // Reduce margin-bottom to reduce space before Professional Summary
+          header.style.marginBottom = '10px';
+        }
+        
+        // Also reduce margin on the first section (Professional Summary) for tighter spacing
+        const firstSection = document.querySelector('section');
+        if (firstSection) {
+          firstSection.style.marginTop = '5px';
         }
 
         // Optimize images

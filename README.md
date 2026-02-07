@@ -104,6 +104,8 @@ The PDF generation system follows a modular architecture with clear separation o
 - ✅ **Smart Page Breaks**: Prevents awkward content splits
 - ✅ **Auto-Expansion**: Automatically expands all collapsible content
 - ✅ **Optimized Styling**: PDF-specific CSS optimizations
+- ✅ **Image Path Conversion**: Automatically converts absolute URLs to relative paths for local PDF generation
+- ✅ **Download Button Hidden**: PDF download button is automatically hidden in the generated PDF
 - ✅ **Configurable**: JSON-based configuration for easy customization
 - ✅ **Error Handling**: Comprehensive error handling and logging
 
@@ -132,11 +134,12 @@ The PDF generation system follows a modular architecture with clear separation o
 │   │   ├── Logger.js              # Structured logging utility
 │   │   └── ConfigValidator.js     # Configuration validator
 │   └── constants.js                # Application constants
-├── assets/                         # Static assets
-│   ├── profile-picture.jpeg
-│   ├── linkedin-mark.png
-│   ├── github-mark.png
-│   └── substack-mark.png
+├── assets/                         # Static assets (images, icons)
+│   ├── profile-picture.jpeg        # Profile photo
+│   ├── linkedin-mark.png           # LinkedIn icon
+│   ├── github-mark.png             # GitHub icon
+│   ├── substack-mark.png           # Substack icon
+│   └── favicon.svg                 # Website favicon
 └── styles/                         # Stylesheets
     └── style.css                   # Main stylesheet
 ```
@@ -273,19 +276,32 @@ PDF generation settings can be customized in `pdf-config.json`:
 | `timeouts.pageLoad` | Page load timeout (ms) | `60000` |
 | `timeouts.imageRender` | Image render delay (ms) | `2000` |
 
-### Network Resources
+### Network Resources & Image Handling
 
 The CV HTML file includes external resources (Bootstrap CDN, images from GitHub Pages). The PDF generator handles these gracefully:
 
+**Image Path Handling**:
+- **HTML Version**: Images use absolute GitHub Pages URLs (`https://arnauudg.github.io/assets/...`) for proper loading on the website
+- **PDF Generation**: Images are automatically converted to relative paths (`./assets/...`) during PDF generation to work with the `file://` protocol
+- This ensures images load correctly in both the web version and the generated PDF
+
+**Resource Loading**:
 - Uses `domcontentloaded` wait condition (faster, less strict than `networkidle0`)
+- Automatically converts image URLs for local file access during PDF generation
 - Continues PDF generation even if some external resources fail to load
 - Uses `file://` URL for better local file handling
 - Falls back to `setContent()` if file URL doesn't work
 
+**PDF-Specific Optimizations**:
+- Download button is automatically hidden in the generated PDF (only visible in HTML version)
+- Images are optimized for print quality
+- All styling is adjusted for PDF readability
+
 If you experience timeout issues, you can:
 1. Increase `timeouts.pageLoad` in `pdf-config.json`
-2. Ensure you have internet connectivity for external resources
-3. The PDF will still generate even if some images don't load
+2. Increase `timeouts.imageRender` in `pdf-config.json` for slower image loading
+3. Ensure you have internet connectivity for external resources (Bootstrap CDN)
+4. The PDF will still generate even if some external resources don't load (images are loaded from local files)
 
 ## 🎨 Architecture & Design Patterns
 
