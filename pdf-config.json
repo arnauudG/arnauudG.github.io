@@ -1,0 +1,28 @@
+{
+  "pdf": {
+    "format": "A4",
+    "scale": 0.95,
+    "printBackground": true,
+    "preferCSSPageSize": false,
+    "displayHeaderFooter": false,
+    "omitBackground": false,
+    "margin": {
+      "top": "25mm",
+      "bottom": "25mm",
+      "left": "10mm",
+      "right": "10mm"
+    }
+  },
+  "viewport": {
+    "width": 1200,
+    "height": 1600,
+    "deviceScaleFactor": 2
+  },
+  "timeouts": {
+    "pageLoad": 60000,
+    "imageRender": 2000
+  },
+  "output": {
+    "filename": "CV.pdf"
+  }
+}

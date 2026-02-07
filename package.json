@@ -1,5 +1,46 @@
 {
+  "name": "cv-website",
+  "version": "1.0.0",
+  "description": "Professional CV website with PDF export functionality",
+  "main": "convertToPDF.js",
+  "scripts": {
+    "build:pdf": "node convertToPDF.js",
+    "start": "node convertToPDF.js",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "npm run lint && npm run format:check"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "pdf",
+    "puppeteer",
+    "html-to-pdf",
+    "clean-code",
+    "design-patterns"
+  ],
+  "author": "Arnaud Gueulette",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnauudG/arnauudG.github.io.git"
+  },
+  "homepage": "https://arnauudg.github.io",
+  "bugs": {
+    "url": "https://github.com/arnauudG/arnauudG.github.io/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "dependencies": {
     "puppeteer": "^24.24.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "prettier": "^3.8.1"
   }
 }
