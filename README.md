@@ -37,39 +37,39 @@ The CV features a modern dark theme inspired by GitHub's design system, with int
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    CV Website System                     │
+│                    CV Website System                    │
 ├─────────────────────────────────────────────────────────┤
-│                                                           │
+│                                                         │
 │  ┌──────────────┐         ┌──────────────┐              │
-│  │  index.html  │────────▶│  style.css   │              │
-│  │   (Source)   │         │  (Styling)   │              │
+│  │  index.html  │────────▶│   style.css  │              │
+│  │   (Source)   │         │   (Styling)  │              │
 │  └──────────────┘         └──────────────┘              │
-│         │                                                 │
+│         │                                               │
 │         │                 ┌──────────────┐              │
 │         └────────────────▶│  PDF Config  │              │
 │                           │  (Settings)  │              │
 │                           └──────────────┘              │
-│                                 │                        │
-│                           ┌─────▼──────┐                │
-│                           │ PDFGenerator│                │
-│                           │  (Facade)   │                │
-│                           └─────┬──────┘                │
-│                                 │                        │
+│                                 │                       │
+│                           ┌─────▼────────┐              │
+│                           │ PDFGenerator │              │
+│                           │   (Facade)   │              │
+│                           └─────┬────────┘              │
+│                                 │                       │
 │                    ┌────────────┴────────────┐          │
 │                    │                         │          │
 │            ┌───────▼──────┐        ┌─────────▼──────┐   │
-│            │ PDFConfig    │        │ DOMManipulator│   │
-│            │ (Strategy)   │        │ (Template)    │   │
-│            └──────────────┘        └───────────────┘   │
-│                                                           │
+│            │  PDFConfig   │        │ DOMManipulator │   │
+│            │  (Strategy)  │        │ (Template)     │   │
+│            └──────────────┘        └────────────────┘   │
+│                                                         │
+│                           ┌─────────────┐               │
+│                           │  Puppeteer  │               │
+│                           │  (Browser)  │               │
+│                           └─────────────┘               │
+│                                                         │
 │                           ┌──────────────┐              │
-│                           │   Puppeteer   │              │
-│                           │   (Browser)   │              │
-│                           └──────────────┘              │
-│                                                           │
-│                           ┌──────────────┐              │
-│                           │    CV.pdf    │               │
-│                           │   (Output)   │               │
+│                           │    CV.pdf    │              │
+│                           │   (Output)   │              │
 │                           └──────────────┘              │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -91,26 +91,26 @@ The PDF generation system follows a modular architecture with clear separation o
 
 ### Website Features
 
-- ✅ **Responsive Design**: Works on desktop, tablet, and mobile devices
-- ✅ **Dark/Light Mode Toggle**: Theme switcher with persistent user preference (localStorage)
-- ✅ **Harmonized Color Palette**: Professional color scheme based on color theory principles
-- ✅ **Interactive Sections**: Collapsible sections for better UX
-- ✅ **PDF Download Button**: Direct download link for the CV PDF
-- ✅ **Print Optimization**: CSS media queries for print/PDF
-- ✅ **Accessibility**: Semantic HTML and proper ARIA attributes
-- ✅ **LinkedIn Integration**: "Self-employed" links to LinkedIn profile for networking
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Dark/Light Mode Toggle**: Theme switcher with persistent user preference (localStorage)
+- **Harmonized Color Palette**: Professional color scheme based on color theory principles
+- **Interactive Sections**: Collapsible sections for better UX
+- **PDF Download Button**: Direct download link for the CV PDF
+- **Print Optimization**: CSS media queries for print/PDF
+- **Accessibility**: Semantic HTML and proper ARIA attributes
+- **LinkedIn Integration**: "Self-employed" links to LinkedIn profile for networking
 
 ### PDF Generation Features
 
-- ✅ **High-Quality Rendering**: 2x device scale factor for crisp output
-- ✅ **Smart Page Breaks**: Prevents awkward content splits
-- ✅ **Auto-Expansion**: Automatically expands all collapsible content
-- ✅ **Optimized Styling**: PDF-specific CSS optimizations
-- ✅ **Image Path Conversion**: Automatically converts absolute URLs to relative paths for local PDF generation
-- ✅ **Download Button Hidden**: PDF download button is automatically hidden in the generated PDF
-- ✅ **Optimized Spacing**: Reduced spacing in PDF for better page utilization, increased spacing in web version for better UX
-- ✅ **Configurable**: JSON-based configuration for easy customization
-- ✅ **Error Handling**: Comprehensive error handling and logging
+- **High-Quality Rendering**: 2x device scale factor for crisp output
+- **Smart Page Breaks**: Prevents awkward content splits
+- **Auto-Expansion**: Automatically expands all collapsible content
+- **Optimized Styling**: PDF-specific CSS optimizations
+- **Image Path Conversion**: Automatically converts absolute URLs to relative paths for local PDF generation
+- **Download Button Hidden**: PDF download button is automatically hidden in the generated PDF
+- **Optimized Spacing**: Reduced spacing in PDF for better page utilization, increased spacing in web version for better UX
+- **Configurable**: JSON-based configuration for easy customization
+- **Error Handling**: Comprehensive error handling and logging
 
 ## 📁 Project Structure
 
@@ -269,15 +269,19 @@ PDF generation settings can be customized in `pdf-config.json`:
 
 ### Configuration Options
 
-| Option | Description | Default |
-|--------|-------------|---------|
-| `format` | PDF paper format | `A4` |
-| `scale` | Content scaling factor | `0.95` |
-| `printBackground` | Include CSS backgrounds | `true` |
-| `deviceScaleFactor` | Rendering quality (1-3) | `2` |
-| `margin.*` | Page margins in mm | `15mm/10mm` |
-| `timeouts.pageLoad` | Page load timeout (ms) | `60000` |
-| `timeouts.imageRender` | Image render delay (ms) | `2000` |
+| Option                 | Description                     | Value   |
+|------------------------|---------------------------------|---------|
+| format                 | PDF paper format                | A4      |
+| scale                  | Content scaling factor          | 1       |
+| printBackground        | Include CSS backgrounds         | true    |
+| deviceScaleFactor      | Rendering quality               | 1       |
+| preferCSSPageSize      | Use CSS-defined page size       | true    |
+| margin.top             | Top margin                      | 15mm    |
+| margin.bottom          | Bottom margin                   | 15mm    |
+| margin.left            | Left margin                     | 12mm    |
+| margin.right           | Right margin                    | 12mm    |
+| timeouts.pageLoad      | Page load timeout (ms)          | 60000   |
+| timeouts.imageRender   | Image render delay (ms)         | 3000    |
 
 ### Network Resources & Image Handling
 
@@ -438,18 +442,18 @@ npm run validate
 
 ### Best Practices
 
-- ✅ Use semantic HTML
-- ✅ Follow accessibility guidelines
-- ✅ Keep configuration externalized
-- ✅ Handle errors gracefully with custom error classes
-- ✅ Document code with JSDoc
-- ✅ Use meaningful variable names
-- ✅ Extract constants to avoid magic numbers
-- ✅ Use structured logging
-- ✅ Validate configuration
-- ✅ Follow SOLID principles
-- ✅ Apply design patterns appropriately
-- ✅ Maintain clean code principles
+- Use semantic HTML
+- Follow accessibility guidelines
+- Keep configuration externalized
+- Handle errors gracefully with custom error classes
+- Document code with JSDoc
+- Use meaningful variable names
+- Extract constants to avoid magic numbers
+- Use structured logging
+- Validate configuration
+- Follow SOLID principles
+- Apply design patterns appropriately
+- Maintain clean code principles
 
 ### Development Tools
 
