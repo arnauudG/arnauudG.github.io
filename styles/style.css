@@ -1,11 +1,11 @@
 /* Tech-Oriented CV Styling */
 
 .section-title {
-    border-bottom: 2px solid #58a6ff;
+    border-bottom: 2px solid var(--accent-color, #2563eb);
     padding-bottom: 5px;
     margin-bottom: 15px;
     font-weight: 600;
-    color: #58a6ff;
+    color: var(--accent-color, #2563eb);
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -22,9 +22,9 @@
     box-shadow: none;
 }
 
-/* Professional Experience Styling */
+/* Professional Experience Styling - Using CSS Variables */
 .professional-experience h4 {
-    color: #f0f6fc;
+    color: var(--text-secondary, #2d2d2d);
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 3px;
@@ -32,20 +32,20 @@
 }
 
 .professional-experience h5 {
-    color: #c9d1d9;
+    color: var(--text-primary, #1a1a1a);
     font-weight: 600;
     margin-bottom: 3px;
     font-size: 1rem;
 }
 
 .professional-experience small {
-    color: #6e7681;
+    color: var(--text-muted, #6b7280);
     font-size: 0.9em;
 }
 
 /* Skills Table Styling */
 table td strong {
-    color: #58a6ff;
+    color: var(--text-secondary, #2d2d2d);
     font-weight: 600;
     display: block;
     margin-bottom: 3px;

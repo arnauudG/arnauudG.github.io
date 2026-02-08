@@ -592,6 +592,12 @@ class PDFGenerator {
           }
         }
 
+        // Hide theme toggle button in PDF
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          themeToggle.style.display = 'none';
+        }
+
         // Optimize links - darker blue for PDF
         const links = document.querySelectorAll('a');
         links.forEach((link) => {
@@ -603,13 +609,13 @@ class PDFGenerator {
         if (header) {
           header.style.borderBottomColor = '#000000';
           // Reduce margin-bottom to reduce space before Professional Summary
-          header.style.marginBottom = '10px';
+          header.style.marginBottom = '5px';
         }
         
         // Also reduce margin on the first section (Professional Summary) for tighter spacing
         const firstSection = document.querySelector('section');
         if (firstSection) {
-          firstSection.style.marginTop = '5px';
+          firstSection.style.marginTop = '0px';
         }
 
         // Optimize images

@@ -92,11 +92,13 @@ The PDF generation system follows a modular architecture with clear separation o
 ### Website Features
 
 - ✅ **Responsive Design**: Works on desktop, tablet, and mobile devices
-- ✅ **Dark Theme**: Modern GitHub-inspired color scheme
+- ✅ **Dark/Light Mode Toggle**: Theme switcher with persistent user preference (localStorage)
+- ✅ **Harmonized Color Palette**: Professional color scheme based on color theory principles
 - ✅ **Interactive Sections**: Collapsible sections for better UX
 - ✅ **PDF Download Button**: Direct download link for the CV PDF
 - ✅ **Print Optimization**: CSS media queries for print/PDF
 - ✅ **Accessibility**: Semantic HTML and proper ARIA attributes
+- ✅ **LinkedIn Integration**: "Self-employed" links to LinkedIn profile for networking
 
 ### PDF Generation Features
 
@@ -106,6 +108,7 @@ The PDF generation system follows a modular architecture with clear separation o
 - ✅ **Optimized Styling**: PDF-specific CSS optimizations
 - ✅ **Image Path Conversion**: Automatically converts absolute URLs to relative paths for local PDF generation
 - ✅ **Download Button Hidden**: PDF download button is automatically hidden in the generated PDF
+- ✅ **Optimized Spacing**: Reduced spacing in PDF for better page utilization, increased spacing in web version for better UX
 - ✅ **Configurable**: JSON-based configuration for easy customization
 - ✅ **Error Handling**: Comprehensive error handling and logging
 
@@ -294,8 +297,41 @@ The CV HTML file includes external resources (Bootstrap CDN, images from GitHub 
 
 **PDF-Specific Optimizations**:
 - Download button is automatically hidden in the generated PDF (only visible in HTML version)
+- Theme toggle button is automatically hidden in the generated PDF (only visible in HTML version)
+- All colors are optimized for print (black text on white background)
+
+### Theme Toggle & Color System
+
+The CV features a sophisticated dark/light mode toggle with a harmonized color palette:
+
+**Color Palette**:
+- **Light Mode**: Professional blue accent (`#2563eb`) with dark text on light backgrounds
+- **Dark Mode**: Lighter blue accent (`#60a5fa`) with light text on dark backgrounds
+- **Consistent Accent**: Blue color scheme maintained across both themes for brand consistency
+
+**Features**:
+- **Theme Toggle Button**: Fixed position in top-right corner with moon/sun icon
+- **Persistent Preference**: User's theme choice is saved in localStorage
+- **Smooth Transitions**: All color changes animate smoothly (0.3s ease)
+- **CSS Variables**: All colors use CSS custom properties for easy theme switching
+- **Accessibility**: Proper contrast ratios (WCAG AA compliant) in both themes
+
+**Color Variables**:
+- `--bg-primary` / `--bg-secondary`: Background colors
+- `--text-primary` / `--text-secondary` / `--text-tertiary` / `--text-muted`: Text hierarchy
+- `--accent-color` / `--accent-hover`: Interactive elements (links, buttons)
+- `--border-color`: Borders and dividers
+
+### LinkedIn Integration
+
+The "Self-employed" entry in the Professional Experience section includes a direct link to the LinkedIn profile:
+- Clicking "Self-employed" opens the LinkedIn profile in a new tab
+- Uses `target="_blank"` and `rel="noopener noreferrer"` for security
+- Maintains consistent styling with other links (accent color)
+- Spacing is optimized for PDF: reduced margins between header and content sections
+- Technical skills labels (AWS:, Azure:, Collibra:) are styled in bold black for better readability
 - Images are optimized for print quality
-- All styling is adjusted for PDF readability
+- All styling is adjusted for PDF readability (colors, fonts, spacing)
 
 If you experience timeout issues, you can:
 1. Increase `timeouts.pageLoad` in `pdf-config.json`

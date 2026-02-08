@@ -19,27 +19,64 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <style>
+        /* CSS Variables for Theme - Harmonized Color Palette */
+        :root {
+            /* Light Mode - Professional & Accessible */
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #2d2d2d;
+            --text-tertiary: #4a4a4a;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-light: #3b82f6;
+        }
+        
+        body.dark-mode {
+            /* Dark Mode - Consistent with Light Mode Palette */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #e2e8f0;
+            --text-tertiary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --accent-color: #60a5fa;
+            --accent-hover: #3b82f6;
+            --accent-light: #93c5fd;
+        }
+        
         body {
             font-family: 'Aptos', 'Aptos Body', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.4;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .container {
-            background-color: #161b22;
+            background-color: var(--bg-secondary);
             padding: 30px;
             border-radius: 8px;
-            border: 1px solid #30363d;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        body.dark-mode .container {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
         .section-title {
-            border-bottom: 2px solid #58a6ff;
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 5px;
             margin-bottom: 15px;
             font-weight: 600;
-            color: #58a6ff;
+            color: var(--accent-color);
             font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: color 0.3s ease, border-color 0.3s ease;
         }
         section {
             margin-bottom: 25px;
@@ -59,16 +96,18 @@
             margin-bottom: 25px;
         }
         header h1 {
-            color: #f0f6fc;
+            color: var(--text-secondary);
             font-weight: 700;
             margin-bottom: 5px;
             font-size: 1.8rem;
+            transition: color 0.3s ease;
         }
         header .lead {
-            color: #8b949e;
+            color: var(--text-muted);
             font-size: 1rem;
             font-weight: 400;
             margin-bottom: 8px;
+            transition: color 0.3s ease;
         }
         header p {
             margin-bottom: 5px;
@@ -76,11 +115,11 @@
         }
         a {
             text-decoration: none;
-            color: #58a6ff;
+            color: var(--accent-color);
             transition: color 0.2s ease;
         }
         a:hover {
-            color: #79c0ff;
+            color: var(--accent-hover);
             text-decoration: underline;
         }
         header p a img {
@@ -88,19 +127,87 @@
             display: inline-block;
             border: none;
             outline: none;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        
+        /* Make GitHub logo more visible in dark mode */
+        body.dark-mode header p a img[alt="GitHub"] {
+            filter: invert(1) brightness(1.2);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Ensure GitHub logo is visible in light mode */
+        header p a img[alt="GitHub"] {
+            opacity: 0.85;
+        }
+        
+        body.dark-mode header p a img[alt="GitHub"]:hover {
+            filter: invert(1) brightness(1.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        header p a img[alt="GitHub"]:hover {
+            opacity: 1;
         }
         h4 {
-            color: #f0f6fc;
+            color: var(--text-secondary);
             font-weight: 600;
             margin-top: 10px;
             margin-bottom: 3px;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
+        h4 a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        h4 a:hover {
+            color: var(--accent-hover);
+        }
+        h5 a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        h5 a:hover {
+            color: var(--accent-hover);
+        }
+        
+        /* Download Button Styling */
+        .btn-download-pdf {
+            background-color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            color: white;
+            font-weight: 600;
+            padding: 10px 24px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn-download-pdf:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+        
+        body.dark-mode .btn-download-pdf {
+            box-shadow: 0 2px 4px rgba(96, 165, 250, 0.2);
+        }
+        
+        body.dark-mode .btn-download-pdf:hover {
+            box-shadow: 0 4px 8px rgba(96, 165, 250, 0.3);
+        }
+        
         h5 {
-            color: #c9d1d9;
+            color: var(--text-primary);
             font-weight: 600;
             margin-bottom: 3px;
             font-size: 1rem;
+            transition: color 0.3s ease;
         }
         ul {
             padding-left: 18px;
@@ -129,24 +236,68 @@
             font-size: 0.9rem;
         }
         em {
-            color: #8b949e;
+            color: var(--text-muted);
             font-style: normal;
             font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
         strong {
-            color: #c9d1d9;
+            color: var(--text-secondary);
             font-weight: 600;
+            transition: color 0.3s ease;
         }
         small {
-            color: #6e7681;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
         }
         footer {
             padding-top: 15px;
-            color: #6e7681;
+            color: var(--text-muted);
             margin-top: 30px;
+            transition: color 0.3s ease;
         }
         footer hr {
-            border-color: #30363d;
+            border-color: var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+        
+        /* Theme Toggle Button Styling */
+        #theme-toggle-wrapper {
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        body.dark-mode #theme-toggle-wrapper {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        
+        #theme-toggle {
+            background: var(--accent-color);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        #theme-toggle:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        #theme-toggle:active {
+            transform: scale(0.95);
         }
         .mb-4 {
             margin-bottom: 20px !important;
@@ -178,12 +329,12 @@
             content: '▶';
             position: absolute;
             right: 0;
-            color: #8b949e;
+            color: var(--text-muted);
             font-size: 0.8rem;
             transition: color 0.2s ease, transform 0.3s ease;
         }
         .collapsible-section:hover::after {
-            color: #58a6ff;
+            color: var(--accent-color);
         }
         .collapsible-section.expanded::after {
             content: '▼';
@@ -195,17 +346,18 @@
             padding-right: 30px;
             margin-top: 10px;
             margin-bottom: 3px;
+            color: var(--text-secondary) !important;
         }
         .collapsible-company::after {
             content: '▶';
             position: absolute;
             right: 0;
-            color: #8b949e;
+            color: var(--text-muted);
             font-size: 0.9rem;
             transition: color 0.2s ease, transform 0.3s ease;
         }
         .collapsible-company:hover::after {
-            color: #58a6ff;
+            color: var(--accent-color);
         }
         .collapsible-company.expanded::after {
             content: '▼';
@@ -240,12 +392,12 @@
             content: '▶';
             position: absolute;
             right: 0;
-            color: #8b949e;
+            color: var(--text-muted);
             font-size: 0.75rem;
             transition: color 0.2s ease, transform 0.3s ease;
         }
         .collapsible-project:hover::after {
-            color: #58a6ff;
+            color: var(--accent-color);
         }
         .collapsible-project.expanded::after {
             content: '▼';
@@ -268,18 +420,18 @@
             position: relative;
             padding-right: 20px;
             display: inline-block;
-            color: #c9d1d9;
+            color: var(--text-primary);
         }
         .collapsible-skill-category::after {
             content: '▶';
             position: absolute;
             right: 0;
-            color: #8b949e;
+            color: var(--text-muted);
             font-size: 0.7rem;
             transition: color 0.2s ease, transform 0.3s ease;
         }
         .collapsible-skill-category:hover::after {
-            color: #58a6ff;
+            color: var(--accent-color);
         }
         .collapsible-skill-category.expanded::after {
             content: '▼';
@@ -310,6 +462,9 @@
             opacity: 1;
         }
         @media print {
+            #theme-toggle {
+                display: none !important;
+            }
             body {
                 background-color: #fff;
                 color: #000;
@@ -365,6 +520,13 @@
 <body>
 
 <div class="container mt-5">
+    <!-- Theme Toggle Button -->
+    <div id="theme-toggle-wrapper" style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
+        <button id="theme-toggle" title="Toggle Dark/Light Mode">
+            <span id="theme-icon">🌙</span>
+        </button>
+    </div>
+    
     <!-- Header -->
     <header class="text-center mb-5">
         <img class="profile-image" src="https://arnauudg.github.io/assets/profile-picture.jpeg" alt="Profile Photo">
@@ -378,8 +540,8 @@
             &nbsp;
             <a href="https://substack.com/@arnaudgueulette?utm_source=user-menu" target="_blank" rel="noopener noreferrer"><img src="https://arnauudg.github.io/assets/substack-mark.png" width="30" height="30" alt="Substack" style="vertical-align: middle; display: inline-block;"></a>
         </p>
-        <p style="margin-top: 25px;">
-            <a href="https://arnauudg.github.io/CV.pdf" download="Arnaud_Gueulette_CV.pdf" class="btn-download-pdf" style="background-color: #58a6ff; border-color: #58a6ff; color: #0d1117; font-weight: 600; padding: 10px 24px; text-decoration: none; display: inline-block; border-radius: 6px; transition: all 0.2s ease; border: 2px solid #58a6ff; box-shadow: 0 2px 4px rgba(88, 166, 255, 0.2);" onmouseover="this.style.backgroundColor='#4493f8'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 8px rgba(88, 166, 255, 0.3)';" onmouseout="this.style.backgroundColor='#58a6ff'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(88, 166, 255, 0.2)';">
+        <p style="margin-top: 35px;">
+            <a href="https://arnauudg.github.io/CV.pdf" download="Arnaud_Gueulette_CV.pdf" class="btn-download-pdf">
                 📄 Download PDF CV
             </a>
         </p>
@@ -398,7 +560,7 @@
     <section class="professional-experience">
         <h2 class="section-title collapsible-section">Professional Experience</h2>
         <div class="section-content">
-            <h4 class="collapsible-company">Data & Analytics Advisor, Self-employed</h4>
+            <h4 class="collapsible-company">Data & Analytics Advisor, <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank" rel="noopener noreferrer">Self-employed</a></h4>
             <p><em>Jan 2026 – Present</em></p>
             <div class="company-content">
             <ul>
@@ -407,13 +569,16 @@
                         <div class="project-content">
                             <ul style="margin-top: 2px;">
                         <li>
-                            Designed lightweight analytics for performance and cost tracking
+                            Designed and implemented lightweight analytics solutions for performance and cost tracking, 
+                            enabling data-driven insights into business operations and financial performance.
                         </li>
                                 <li>
-                            Translated data into actionable decision support
-                                </li>
+                            Translated complex data into actionable decision support frameworks, providing clear recommendations 
+                            and strategic guidance to improve operational efficiency and business outcomes.
+                        </li>
                                 <li>
-                            Established KPIs and reporting for operational follow-up
+                            Established comprehensive KPIs and reporting mechanisms for operational follow-up, creating 
+                            dashboards and automated reports that enable continuous monitoring and performance optimization.
                         </li>
                     </ul>
                         </div>
@@ -583,54 +748,54 @@
             <tr valign="top">
                 <td style="width:50%; padding-right:20px; vertical-align: top;">
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Programming & Languages</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Python, SQL, Java, Linux/Bash, JavaScript</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Programming & Languages</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Python, SQL, Java, Linux/Bash, JavaScript</p>
                         </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Cloud Platforms</strong>
-                        <div style="line-height: 1.6; color: #c9d1d9;">
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Cloud Platforms</strong>
+                        <div style="line-height: 1.6; color: var(--text-primary);">
                             <div style="margin-bottom: 4px;">
-                                <strong style="color: #58a6ff; display: inline-block; min-width: 50px;">AWS:</strong><span style="margin-left: -8px;">S3, EC2, RDS, Glue, Athena, Lambda, Lake Formation, EventBridge, EKS, CloudWatch, IAM, SQS, SNS</span>
-                            </div>
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 50px;">AWS:</strong><span style="margin-left: -8px;">S3, EC2, RDS, Glue, Athena, Lambda, Lake Formation, EventBridge, EKS, CloudWatch, IAM, SQS, SNS</span>
+                    </div>
                             <div>
-                                <strong style="color: #58a6ff; display: inline-block; min-width: 50px;">Azure:</strong><span style="margin-left: -3px;">Data Lake, Data Factory, ML Studio, Synapse Analytics</span>
-                            </div>
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 50px;">Azure:</strong><span style="margin-left: -3px;">Data Lake, Data Factory, ML Studio, Synapse Analytics</span>
                         </div>
                     </div>
+                        </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Data Engineering & Orchestration</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Apache Airflow, dbt, Apache Spark, pandas, PySpark, DVC, MLflow, Kafka, Debezium</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Engineering & Orchestration</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Apache Airflow, dbt, Apache Spark, pandas, PySpark, DVC, MLflow, Kafka, Debezium</p>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Data Systems & Databases</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Snowflake, PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Elasticsearch, Dremio</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Systems & Databases</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Snowflake, PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Elasticsearch, Dremio</p>
                     </div>
                 </td>
                 <td style="width:50%; padding-left:20px; vertical-align: top;">
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Data Governance & Quality</strong>
-                        <div style="line-height: 1.6; color: #c9d1d9;">
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Governance & Quality</strong>
+                        <div style="line-height: 1.6; color: var(--text-primary);">
                             <div style="margin-bottom: 4px;">
-                                <strong style="color: #58a6ff; display: inline-block; min-width: 70px;">Collibra:</strong><span style="margin-left: -8px;">Catalog, Lineage, Workflow, Integration, Data Quality</span>
-                            </div>
-                            <div>Soda, Great Expectations, Data Quality Frameworks</div>
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 70px;">Collibra:</strong><span style="margin-left: -8px;">Catalog, Lineage, Workflow, Integration, Data Quality</span>
                         </div>
+                            <div>Soda, Great Expectations, Data Quality Frameworks</div>
+                    </div>
+                        </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Infrastructure as Code & DevOps</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Terraform, Terragrunt, Docker, Kubernetes, Helm, Rancher, GitLab&nbsp;CI/CD, GitHub Actions</p>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Infrastructure as Code & DevOps</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Terraform, Terragrunt, Docker, Kubernetes, Helm, Rancher, GitLab&nbsp;CI/CD, GitHub Actions</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">BI & Visualization</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Power BI, Apache Superset, Grafana, Kibana, Tableau</p>
+                        </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">ML/AI & Frameworks</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Scikit-learn, PyTorch, TensorFlow, SQLAlchemy, Pydantic, PyTest, Flask, FastAPI</p>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">BI & Visualization</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Power BI, Apache Superset, Grafana, Kibana, Tableau</p>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">ML/AI & Frameworks</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Scikit-learn, PyTorch, TensorFlow, SQLAlchemy, Pydantic, PyTest, Flask, FastAPI</p>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem;">Other Tools</strong>
-                        <p style="margin: 0; line-height: 1.6; color: #c9d1d9;">Power Automate, Git, Jira, Confluence</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Other Tools</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Power Automate, Git, Jira, Confluence</p>
                     </div>
                 </td>
             </tr>
@@ -645,16 +810,16 @@
         <table style="width:100%; table-layout:fixed;">
             <tr valign="top">
                 <td style="width:50%; padding-right:15px; line-height: 2.0;">
-                    <span style="color: #c9d1d9; font-weight: 600;">Critical Thinking</span><br>
-                    <span style="color: #c9d1d9; font-weight: 600;">Problem Solving</span><br>
-                    <span style="color: #c9d1d9; font-weight: 600;">Continuous Learning</span><br>
-                    <span style="color: #c9d1d9; font-weight: 600;">Agile & Iterative Delivery</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">Critical Thinking</span><br>
+                    <span style="color: var(--text-primary); font-weight: 600;">Problem Solving</span><br>
+                    <span style="color: var(--text-primary); font-weight: 600;">Continuous Learning</span><br>
+                    <span style="color: var(--text-primary); font-weight: 600;">Agile & Iterative Delivery</span>
                 </td>
                 <td style="width:50%; padding-left:15px; line-height: 2.0;">
-                    <span style="color: #c9d1d9; font-weight: 600;">Teamwork & Collaboration</span><br>
-                    <span style="color: #c9d1d9; font-weight: 600;">Business-Driven Mindset</span><br>
-                    <span style="color: #c9d1d9; font-weight: 600;">Outcome-Oriented</span><br>
-                    <span style="color: #c9d1d9; font-weight: 600;">Languages:</span> French (C2), English (C1), Dutch (B1)
+                    <span style="color: var(--text-primary); font-weight: 600;">Teamwork & Collaboration</span><br>
+                    <span style="color: var(--text-primary); font-weight: 600;">Business-Driven Mindset</span><br>
+                    <span style="color: var(--text-primary); font-weight: 600;">Outcome-Oriented</span><br>
+                    <span style="color: var(--text-primary); font-weight: 600;">Languages:</span> French (C2), English (C1), Dutch (B1)
                 </td>
             </tr>
         </table>
@@ -665,7 +830,7 @@
     <section>
         <h2 class="section-title collapsible-section">Certifications</h2>
         <div class="section-content">
-            <h4 class="collapsible-company" style="color: #f0f6fc;">Collibra</h4>
+            <h4 class="collapsible-company">Collibra</h4>
             <div class="company-content">
         <ul>
             <li>
@@ -685,7 +850,7 @@
                 </ul>
             </div>
             
-            <h4 class="collapsible-company" style="color: #f0f6fc;">AWS</h4>
+            <h4 class="collapsible-company">AWS</h4>
             <div class="company-content">
                 <ul>
             <li>
@@ -747,7 +912,7 @@
         </ul>
             </div>
             
-            <h4 class="collapsible-company" style="color: #f0f6fc;">Soda</h4>
+            <h4 class="collapsible-company">Soda</h4>
             <div class="company-content">
                 <ul>
                     <li>
@@ -767,7 +932,7 @@
                 </ul>
             </div>
             
-            <h4 class="collapsible-company" style="color: #f0f6fc;">SAS</h4>
+            <h4 class="collapsible-company">SAS</h4>
             <div class="company-content">
                 <ul>
                     <li>
@@ -787,7 +952,7 @@
                 </ul>
             </div>
             
-            <h4 class="collapsible-company" style="color: #f0f6fc;">Microsoft</h4>
+            <h4 class="collapsible-company">Microsoft</h4>
             <div class="company-content">
                 <ul>
                     <li>
@@ -841,7 +1006,7 @@
     <section>
         <h2 class="section-title collapsible-section">Other Achievements</h2>
         <div class="section-content">
-            <h4 class="collapsible-company" style="color: #f0f6fc;">Hackathon</h4>
+            <h4 class="collapsible-company">Hackathon</h4>
             <div class="company-content">
         <ul>
             <li>
@@ -1022,6 +1187,42 @@
             });
         });
     });
+    
+    // Theme Toggle Functionality
+    (function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        
+        // Apply saved theme on page load
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.textContent = '☀️';
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.textContent = '🌙';
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', function() {
+            const isDarkMode = body.classList.contains('dark-mode');
+            
+            if (isDarkMode) {
+                // Switch to light mode
+                body.classList.remove('dark-mode');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                // Switch to dark mode
+                body.classList.add('dark-mode');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    })();
 </script>
 </body>
 </html>
