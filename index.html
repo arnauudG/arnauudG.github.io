@@ -487,26 +487,28 @@
                 color: #000;
             }
             section {
-                page-break-inside: avoid;
-            }
-            .no-print-break {
                 page-break-inside: auto;
                 break-inside: auto;
+                margin-bottom: 18px;
             }
-            .section-content {
+            h2, h4, h5 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            li, p {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .professional-experience,
+            .section-content,
+            .company-content,
+            .project-content {
+                overflow: visible !important;
                 max-height: none !important;
                 opacity: 1 !important;
             }
             .section-content.expanded {
                 max-height: none !important;
-            }
-            .company-content {
-                max-height: none !important;
-                opacity: 1 !important;
-            }
-            .project-content {
-                max-height: none !important;
-                opacity: 1 !important;
             }
             .skill-content {
                 max-height: none !important;
@@ -736,7 +738,7 @@
                         <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Governance & Quality</strong>
                         <div style="line-height: 1.6; color: var(--text-primary);">
                             <div style="margin-bottom: 4px;">
-                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 70px;">Collibra:</strong><span style="margin-left: -8px;">Catalog, Lineage, Workflow, Integration, Data Quality</span>
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 70px;">Collibra:</strong> <span>Catalog, Lineage, Workflow, Integration, Data Quality</span>
                         </div>
                             <div>Soda, Great Expectations, Data Quality Frameworks</div>
                     </div>
@@ -749,10 +751,10 @@
                         <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Cloud Platforms</strong>
                         <div style="line-height: 1.6; color: var(--text-primary);">
                             <div style="margin-bottom: 4px;">
-                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 50px;">AWS:</strong><span style="margin-left: -8px;">S3, EC2, RDS, Glue, Athena, Lambda, Lake Formation, EventBridge, EKS, CloudWatch, IAM, SQS, SNS</span>
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 50px;">AWS:</strong> <span>S3, EC2, RDS, Glue, Athena, Lambda, Lake Formation, EventBridge, EKS, CloudWatch, IAM, SQS, SNS</span>
                     </div>
                             <div>
-                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 50px;">Azure:</strong><span style="margin-left: -3px;">Data Lake, Data Factory, ML Studio, Synapse Analytics</span>
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 50px;">Azure:</strong> <span>Data Lake, Data Factory, ML Studio, Synapse Analytics</span>
                         </div>
                     </div>
                         </div>
@@ -844,7 +846,7 @@
     </section>
 
     <!-- Achievements -->
-    <section class="no-print-break">
+    <section>
         <h2 class="section-title collapsible-section">Achievements</h2>
         <div class="section-content">
             <h4 class="collapsible-company">Hackathon</h4>
