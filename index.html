@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arnaud Gueulette - Cloud Data Engineer & Data Platform & Governance Practitioner. Expert in data engineering, data governance, Collibra, AWS, and modern data platforms.">
-    <meta name="keywords" content="Data Engineer, Cloud Data Engineer, Data Governance, Data Quality, Collibra, AWS, Azure, Data Platform, Data Engineering, Arnaud Gueulette, CV, Resume">
+    <meta name="description" content="Arnaud Gueulette - Data & AI Governance Solutions Architect specializing in trustworthy data, analytics, and AI across Collibra, AWS, and Azure.">
+    <meta name="keywords" content="Data Governance, Data Governance Consultant, Collibra, AWS, Azure, Metadata Management, Data Quality, Reference Data, AI-ready Governance, Data Platform, Data Architecture, Arnaud Gueulette, CV, Resume">
     <meta name="author" content="Arnaud Gueulette">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Arnaud Gueulette - Cloud Data Engineer & Data Governance Practitioner">
-    <meta property="og:description" content="Cloud Data Engineer specializing in data platforms, governance, and quality. Expert in Collibra, AWS, and modern data engineering practices.">
+    <meta property="og:title" content="Arnaud Gueulette - Data & AI Governance Solutions Architect">
+    <meta property="og:description" content="Data & AI Governance Solutions Architect specializing in trustworthy data, analytics, and AI across Collibra, AWS, and Azure.">
     <meta property="og:type" content="profile">
-    <title>Arnaud Gueulette - Cloud Data Engineer & Data Governance Practitioner | CV</title>
+    <title>Arnaud Gueulette - Data & AI Governance Solutions Architect | CV</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="https://arnauudg.github.io/assets/favicon.svg">
     <link rel="icon" type="image/png" href="https://arnauudg.github.io/assets/favicon.png">
@@ -462,7 +462,7 @@
             opacity: 1;
         }
         @media print {
-            #theme-toggle {
+            #theme-toggle-wrapper {
                 display: none !important;
             }
             body {
@@ -489,6 +489,10 @@
             section {
                 page-break-inside: avoid;
             }
+            .no-print-break {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
             .section-content {
                 max-height: none !important;
                 opacity: 1 !important;
@@ -514,6 +518,18 @@
             .collapsible-skill-category::after {
                 display: none;
             }
+            .print-page-break {
+                page-break-before: always;
+                break-before: page;
+            }
+            .btn-download-pdf {
+                display: none !important;
+            }
+        }
+        .header-capabilities {
+            font-size: 0.95rem;
+            color: var(--text-muted, #6b7280);
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -522,7 +538,7 @@
 <div class="container mt-5">
     <!-- Theme Toggle Button -->
     <div id="theme-toggle-wrapper" style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
-        <button id="theme-toggle" title="Toggle Dark/Light Mode">
+        <button id="theme-toggle" title="Toggle Dark/Light Mode" aria-label="Toggle dark or light mode">
             <span id="theme-icon">🌙</span>
         </button>
     </div>
@@ -530,15 +546,16 @@
     <!-- Header -->
     <header class="text-center mb-5">
         <img class="profile-image" src="https://arnauudg.github.io/assets/profile-picture.jpeg" alt="Profile Photo">
-        <h1>Gueulette Arnaud</h1>
-        <p class="lead">Cloud Data Engineer | Data Platform & Governance Practitioner</p>
+        <h1>Arnaud Gueulette</h1>
+        <p class="lead mb-1">Data & AI Governance Solutions Architect</p>
+        <p class="header-capabilities">Collibra, AWS, Azure | Metadata, Data Quality, Reference Data & AI-ready Governance</p>
         <p><strong>Location:</strong> Brussels, Belgium | <strong>Phone:</strong> +32 488 69 25 31 | <strong>Email:</strong> arnaud_gueulette@outlook.fr</p>
         <p style="margin-top: 15px; margin-bottom: 10px;">
-            <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank" rel="noopener noreferrer"><img src="https://arnauudg.github.io/assets/linkedin-mark.png" width="25" height="25" alt="LinkedIn" style="vertical-align: middle;"></a>
+            <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><img src="https://arnauudg.github.io/assets/linkedin-mark.png" width="25" height="25" alt="LinkedIn" style="vertical-align: middle;"></a>
             &nbsp;
-            <a href="https://github.com/arnauudG" target="_blank" rel="noopener noreferrer"><img src="https://arnauudg.github.io/assets/github-mark.png" width="25" height="25" alt="GitHub" style="vertical-align: middle;"></a>
+            <a href="https://github.com/arnauudG" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><img src="https://arnauudg.github.io/assets/github-mark.png" width="25" height="25" alt="GitHub" style="vertical-align: middle;"></a>
             &nbsp;
-            <a href="https://substack.com/@arnaudgueulette?utm_source=user-menu" target="_blank" rel="noopener noreferrer"><img src="https://arnauudg.github.io/assets/substack-mark.png" width="30" height="30" alt="Substack" style="vertical-align: middle; display: inline-block;"></a>
+            <a href="https://substack.com/@arnaudgueulette?utm_source=user-menu" target="_blank" rel="noopener noreferrer" aria-label="Substack profile"><img src="https://arnauudg.github.io/assets/substack-mark.png" width="30" height="30" alt="Substack" style="vertical-align: middle; display: inline-block;"></a>
         </p>
         <p style="margin-top: 35px;">
             <a href="https://arnauudg.github.io/CV.pdf" download="Arnaud_Gueulette_CV.pdf" class="btn-download-pdf">
@@ -548,11 +565,10 @@
     </header>
 
     <!-- Professional Summary -->
-    <!-- Professional Summary -->
     <section>
         <h2 class="section-title">Professional Summary</h2>
         <p>
-            I design and scale modern data platforms by embedding governance, data quality, and operating models directly into engineering workflows, enabling organizations to treat governance as a driver of scale rather than a constraint.
+            Data & AI Governance Solutions Architect helping organizations make data, analytics, and AI use cases trustworthy by embedding governance directly into platforms and delivery processes. Hands-on across Collibra, AWS, and Azure, with experience turning governance principles into working systems: metadata models, data quality checks, reference data controls, workflows, lineage, and operational guardrails for reliable data and AI-enabled decision-making.
         </p>
     </section>
 
@@ -560,32 +576,6 @@
     <section class="professional-experience">
         <h2 class="section-title collapsible-section">Professional Experience</h2>
         <div class="section-content">
-            <h4 class="collapsible-company">Data & Analytics Advisor, <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank" rel="noopener noreferrer">Self-employed</a></h4>
-            <p><em>Jan 2026 – Present</em></p>
-            <div class="company-content">
-            <ul>
-                <li>
-                        <h5 class="collapsible-project">Independent Business – Analytics & Decision Support<br><small>Jan 2026 – Present</small></h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                        <li>
-                            Designed and implemented lightweight analytics solutions for performance and cost tracking, 
-                            enabling data-driven insights into business operations and financial performance.
-                        </li>
-                                <li>
-                            Translated complex data into actionable decision support frameworks, providing clear recommendations 
-                            and strategic guidance to improve operational efficiency and business outcomes.
-                        </li>
-                                <li>
-                            Established comprehensive KPIs and reporting mechanisms for operational follow-up, creating 
-                            dashboards and automated reports that enable continuous monitoring and performance optimization.
-                        </li>
-                    </ul>
-                        </div>
-                </li>
-            </ul>
-        </div>
-            
             <h4 class="collapsible-company">Data Consultant, <strong><a href="https://www.datashift.eu" target="_blank" rel="noopener noreferrer">Datashift NV</a></strong></h4>
             <p><em>Feb 2025 – Present</em></p>
             <div class="company-content">
@@ -595,40 +585,32 @@
                         <div class="project-content">
                             <ul style="margin-top: 2px;">
                         <li>
-                            Supporting the Data Quality team in developing and maintaining <strong>SQL</strong>-based data quality checks across multiple domains.
-                                    Improved the efficiency, scalability, and maintainability of rule development by introducing structured templates, 
-                                    reusable query logic, and consistent validation standards. Collaborated with data engineers and analysts 
-                                    to align business rules with technical implementations, enhancing data reliability and trust.
-                                </li>
-                                <li>
-                                    Leading an ongoing initiative to improve the completeness, consistency, and integration of product 
-                                    reference data across <strong>Snowflake</strong> and external systems. This includes analyzing multiple Snowflake reference tables, 
-                                    uncovering business logic behind manual data entry processes, resolving missing or inconsistent product identifiers, and 
-                                    collaborating with domain experts to validate product catalog structures. Designing and testing scalable matching frameworks—combining 
-                                    exact, hierarchical, and fuzzy-matching techniques—to maximise enrichment coverage between datasets and strengthen 
-                                    downstream <strong>data quality</strong> and <strong>governance</strong>.
-                                </li>
-                                <li>
-                                    Currently leading a <strong>proof-of-concept</strong> to evaluate the <strong>Collibra Model Context Protocol (MCP)</strong> as a discovery and interaction layer 
-                                    for governance assets. The initiative focuses on improving data discoverability, search relevance, and contextual access to 
-                                    business glossaries, data assets, and quality rules by enabling natural-language querying across Collibra metadata. 
-                                    The POC explores secure, role-aware access patterns and integration with engineering workflows and tooling, with the objective 
-                                    of reducing friction between data consumers and governance platforms while increasing adoption and trust in governed data.
+                            Supporting SQL-based data quality checks across multiple domains by introducing structured templates, reusable query logic, and consistent validation standards.
+                        </li>
+                        <li>
+                            Improving product reference data completeness and consistency across Snowflake and external systems by analyzing reference tables, resolving inconsistent identifiers, and designing exact, hierarchical, and fuzzy-matching approaches.
+                        </li>
+                        <li>
+                            Leading a proof-of-concept evaluating the <strong>Collibra Model Context Protocol (MCP)</strong> as a natural-language discovery and interaction layer for governed metadata, business glossaries, data assets, and quality rules.
+                        </li>
+                        <li>
+                            Delivered a policy-aware M365 Copilot agent guiding users through compliant Collibra asset submissions, reducing submission errors through structured templates, JSON schemas, Excel import logic, and scenario-based testing.
                         </li>
                     </ul>
                         </div>
                 </li>
                     <li>
-                        <h5 class="collapsible-project"><a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> – Data Governance Initiative<br><small>Feb 2025 – Present</small></h5>
+                        <h5 class="collapsible-project"><a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> – Data Governance Initiative<br><small>Mar 2025 – Present</small></h5>
                         <div class="project-content">
                             <ul style="margin-top: 2px;">
                         <li>
-                                    Leading cloud data engineering initiatives to embed <strong>data governance</strong> and <strong>data quality</strong> practices directly into 
-                                    engineering workflows (governance by design) at Scania. Combining functional ownership with hands-on implementation across 
-                                    <strong>Collibra</strong> and <strong>AWS</strong>. Designed and deployed end-to-end solutions leveraging <strong>Collibra Data Quality</strong>, 
-                                    <strong>metadata ingestion pipelines</strong>, and <strong>BPMN workflows</strong>; built scalable AWS services (<strong>Lambda</strong>, <strong>EventBridge</strong>, 
-                                    <strong>RDS</strong>, <strong>EKS</strong>) to automate governance processes, enable <strong>lineage tracking</strong>, and improve the reliability of 
-                                    data quality monitoring.
+                            Operationalizing governance-by-design across <strong>Collibra Data Intelligence Platform</strong>, <strong>Collibra Data Quality</strong>, metadata ingestion, lineage, reference data, and AWS platform capabilities, turning governance requirements into reusable workflows, controls, and operational patterns.
+                        </li>
+                        <li>
+                            Designing and deploying AWS-based governance automation using <strong>EKS</strong>, <strong>Lambda</strong>, <strong>EventBridge</strong>, <strong>RDS</strong>, Terraform, Terragrunt, Docker, and Kubernetes to improve data quality monitoring, metadata operations, and platform reliability.
+                        </li>
+                        <li>
+                            Implementing Collibra Data Quality, metadata ingestion pipelines, BPMN workflows, and platform monitoring patterns to move governance from documentation into operational processes, enabling new lineage visibility and more reliable governance operations.
                         </li>
                     </ul>
                         </div>
@@ -638,25 +620,16 @@
                         <div class="project-content">
                             <ul style="margin-top: 2px;">
                         <li>
-                                    Developed automated deployment frameworks on <strong>AWS</strong> using <strong>Terraform</strong> and <strong>Terragrunt</strong> for <strong>Soda Agent</strong> and <strong>Collibra DQ standalone</strong> with external metastore (<strong>RDS</strong>), 
-                                    enabling <strong>Infrastructure-as-Code</strong> deployments in minutes through reusable, modular components.
+                            Developed reusable AWS deployment frameworks using Terraform and Terragrunt for Soda Agent and Collibra DQ standalone with external RDS metastore, enabling faster Infrastructure-as-Code deployments.
                         </li>
                         <li>
-                                    Designed and implemented a Data Quality & Governance demo environment integrating <strong>Soda</strong>, <strong>dbt</strong>, <strong>Airflow</strong>, 
-                                    <strong>Superset</strong>, and <strong>Python</strong> to orchestrate automated validations and analytics pipelines.
+                            Designed a Data Quality & Governance demo environment integrating Soda, dbt, Airflow, Superset, Python, and Collibra to demonstrate automated validation, lineage, and governance integration patterns.
                         </li>
                         <li>
-                                    Integrated <strong>Collibra</strong> as the governance backbone, linking data quality metrics and <strong>lineage</strong> to catalog assets 
-                                    to improve ownership, traceability, and lifecycle visibility.
+                            Explored Collibra MCP for AI-powered data governance use cases, including natural-language metadata discovery, asset exploration, and governance workflow support.
                         </li>
                         <li>
-                                    Established end-to-end observability and compliance-readiness patterns, creating reusable frameworks 
-                                    and best practices for client engagements.
-                        </li>
-                        <li>
-                                    Currently testing the <strong>Collibra Model Context Protocol (MCP)</strong> for AI-powered data governance use cases, 
-                                    exploring how AI agents can interact with Collibra's metadata to enable natural language queries, automated asset discovery, 
-                                    and intelligent governance workflows that reduce manual effort and improve data accessibility.
+                            Trained 10 colleagues on Soda from the ground up, helping scale automated data quality practices across client engagements (<a href="https://www.linkedin.com/feed/update/urn:li:activity:7443282365969428480/" target="_blank" rel="noopener noreferrer">LinkedIn post</a>).
                         </li>
                     </ul>
                         </div>
@@ -718,9 +691,21 @@
         </div>
     </section>
 
+    <!-- Selected Projects & Focus Areas -->
+    <section>
+        <h2 class="section-title collapsible-section">Selected Projects & Focus Areas</h2>
+        <div class="section-content">
+            <ul>
+                <li><strong>Reference Data Governance in Collibra</strong><br>Designed a governance model for Code Sets, Code Values, Crosswalks, lifecycle states, stewardship roles, workflows, and trusted consumption patterns, distinguishing accepted, implemented, and actively consumed reference data.</li>
+                <li><strong>AI-ready Context Governance</strong><br>Developed a practical thesis and implementation approach for using governed business, technical, operational, and policy context to support trustworthy AI agents, GenBI use cases, and metadata-driven discovery. Applied this through Collibra MCP experimentation and thought-leadership work around governed context for enterprise AI.</li>
+                <li><strong>Cloud Data Governance Operations</strong><br>Supported AWS-based governance infrastructure, automation, monitoring, and platform reliability for Collibra DQ, metadata ingestion, and governance operations.</li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Education -->
     <section>
-        <h2 class="section-title collapsible-section">Education</h2>
+        <h2 class="section-title collapsible-section print-page-break">Education</h2>
         <div class="section-content">
             <h4 class="collapsible-company">Master's Degree in Data Science, <a href="https://www.uclouvain.be/en" target="_blank" rel="noopener noreferrer">Université Catholique de Louvain</a></h4>
             <p><em>2020 – 2023</em></p>
@@ -748,9 +733,18 @@
             <tr valign="top">
                 <td style="width:50%; padding-right:20px; vertical-align: top;">
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Programming & Languages</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Python, SQL, Java, Linux/Bash, JavaScript</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Governance & Quality</strong>
+                        <div style="line-height: 1.6; color: var(--text-primary);">
+                            <div style="margin-bottom: 4px;">
+                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 70px;">Collibra:</strong><span style="margin-left: -8px;">Catalog, Lineage, Workflow, Integration, Data Quality</span>
                         </div>
+                            <div>Soda, Great Expectations, Data Quality Frameworks</div>
+                    </div>
+                        </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Python Engineering & AI Enablement</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Scikit-learn, SQLAlchemy, Pydantic, PyTest, Flask, FastAPI</p>
+                    </div>
                     <div style="margin-bottom: 15px;">
                         <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Cloud Platforms</strong>
                         <div style="line-height: 1.6; color: var(--text-primary);">
@@ -763,36 +757,27 @@
                     </div>
                         </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Engineering & Orchestration</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Apache Airflow, dbt, Apache Spark, pandas, PySpark, DVC, MLflow, Kafka, Debezium</p>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Systems & Databases</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Snowflake, PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Elasticsearch, Dremio</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Infrastructure as Code & DevOps</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Terraform, Terragrunt, Docker, Kubernetes, Helm, Rancher, GitLab&nbsp;CI/CD, GitHub Actions</p>
                     </div>
                 </td>
                 <td style="width:50%; padding-left:20px; vertical-align: top;">
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Governance & Quality</strong>
-                        <div style="line-height: 1.6; color: var(--text-primary);">
-                            <div style="margin-bottom: 4px;">
-                                <strong style="color: var(--text-secondary); font-weight: 600; display: inline-block; min-width: 70px;">Collibra:</strong><span style="margin-left: -8px;">Catalog, Lineage, Workflow, Integration, Data Quality</span>
-                        </div>
-                            <div>Soda, Great Expectations, Data Quality Frameworks</div>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Engineering & Orchestration</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Apache Airflow, dbt, Apache Spark, pandas, PySpark, Kafka, Debezium</p>
                     </div>
-                        </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Infrastructure as Code & DevOps</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Terraform, Terragrunt, Docker, Kubernetes, Helm, Rancher, GitLab&nbsp;CI/CD, GitHub Actions</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Systems & Databases</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Snowflake, PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Elasticsearch</p>
                     </div>
                     <div style="margin-bottom: 15px;">
                         <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">BI & Visualization</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Power BI, Apache Superset, Grafana, Kibana, Tableau</p>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Power BI, Apache Superset, Grafana, Kibana</p>
                         </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">ML/AI & Frameworks</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Scikit-learn, PyTorch, TensorFlow, SQLAlchemy, Pydantic, PyTest, Flask, FastAPI</p>
-                    </div>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Programming & Languages</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Python, SQL, Java, Linux/Bash</p>
+                        </div>
                     <div style="margin-bottom: 15px;">
                         <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Other Tools</strong>
                         <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Power Automate, Git, Jira, Confluence</p>
@@ -803,27 +788,13 @@
         </div>
     </section>
 
-    <!-- Soft Skills -->
+    <!-- Languages & Professional Strengths -->
     <section>
-        <h2 class="section-title collapsible-section">Soft Skills</h2>
-        <div class="section-content">
-        <table style="width:100%; table-layout:fixed;">
-            <tr valign="top">
-                <td style="width:50%; padding-right:15px; line-height: 2.0;">
-                    <span style="color: var(--text-primary); font-weight: 600;">Critical Thinking</span><br>
-                    <span style="color: var(--text-primary); font-weight: 600;">Problem Solving</span><br>
-                    <span style="color: var(--text-primary); font-weight: 600;">Continuous Learning</span><br>
-                    <span style="color: var(--text-primary); font-weight: 600;">Agile & Iterative Delivery</span>
-                </td>
-                <td style="width:50%; padding-left:15px; line-height: 2.0;">
-                    <span style="color: var(--text-primary); font-weight: 600;">Teamwork & Collaboration</span><br>
-                    <span style="color: var(--text-primary); font-weight: 600;">Business-Driven Mindset</span><br>
-                    <span style="color: var(--text-primary); font-weight: 600;">Outcome-Oriented</span><br>
-                    <span style="color: var(--text-primary); font-weight: 600;">Languages:</span> French (C2), English (C1), Dutch (B1)
-                </td>
-            </tr>
-        </table>
-        </div>
+        <h2 class="section-title">Languages & Professional Strengths</h2>
+        <p>
+            <strong>Languages:</strong> French C2/native, English C1, Dutch B1.<br>
+            <strong>Strengths:</strong> stakeholder communication, problem-solving, business-driven delivery, critical thinking, continuous learning, Agile collaboration.
+        </p>
     </section>
 
     <!-- Certifications -->
@@ -832,179 +803,49 @@
         <div class="section-content">
             <h4 class="collapsible-company">Collibra</h4>
             <div class="company-content">
-        <ul>
-            <li>
-                        <h5 class="collapsible-project">
-                <a href="https://www.credly.com/badges/2171017b-65fd-45a4-9120-e22b8e9c189e/public_url" target="_blank" rel="noopener noreferrer">
-                    Collibra Solution Architect Certification
-                </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>Collibra Solution Architect</strong> certification demonstrating expertise in data governance platform design and implementation.
-                                </li>
-                            </ul>
-                        </div>
-            </li>
+                <ul>
+                    <li><a href="https://www.credly.com/badges/2171017b-65fd-45a4-9120-e22b8e9c189e/public_url" target="_blank" rel="noopener noreferrer">Collibra Solution Architect Certification</a></li>
                 </ul>
             </div>
-            
+
             <h4 class="collapsible-company">AWS</h4>
             <div class="company-content">
                 <ul>
-            <li>
-                        <h5 class="collapsible-project">
-                <a href="https://www.credly.com/badges/80ce77bc-67aa-4782-858e-e15ca23e03c0/public_url" target="_blank" rel="noopener noreferrer">
-                    AWS Certified Developer – Associate (DVA-C02)
-                </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>AWS Certified Developer – Associate</strong> demonstrating proficiency in developing and maintaining applications on AWS.
-                                </li>
-                            </ul>
-                        </div>
-            </li>
-            <li>
-                        <h5 class="collapsible-project">
-                <a href="https://www.credly.com/badges/97636c9a-e3a0-4292-bd86-166ebe2bea97/public_url" target="_blank" rel="noopener noreferrer">
-                    AWS Certified Solutions Architect – Associate (SAA-C03)
-                </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>AWS Certified Solutions Architect – Associate</strong> demonstrating ability to design distributed systems on AWS.
-                                </li>
-                            </ul>
-                        </div>
-            </li>
-            <li>
-                        <h5 class="collapsible-project">
-                <a href="https://www.credly.com/badges/d8a9d800-29b2-4eb2-a0aa-d7df434e08b2/public_url" target="_blank" rel="noopener noreferrer">
-                    AWS Certified CloudOps Engineer – Associate (SOA-C03)
-                </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>AWS Certified CloudOps Engineer – Associate</strong> demonstrating expertise in cloud operations and system reliability.
-                                </li>
-                            </ul>
-                        </div>
-            </li>
-            <li>
-                        <h5 class="collapsible-project">
-                <a href="https://www.credly.com/badges/5142ab6f-6733-4ab8-b7c5-8d3f767d15e6/public_url" target="_blank" rel="noopener noreferrer">
-                    AWS Certified Data Engineer – Associate (DEA-C01)
-                </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>AWS Certified Data Engineer – Associate</strong> demonstrating proficiency in designing and implementing data engineering solutions on AWS.
-                                </li>
-                            </ul>
-                        </div>
-            </li>
-        </ul>
+                    <li><a href="https://www.credly.com/badges/97636c9a-e3a0-4292-bd86-166ebe2bea97/public_url" target="_blank" rel="noopener noreferrer">AWS Certified Solutions Architect – Associate (SAA-C03)</a></li>
+                    <li><a href="https://www.credly.com/badges/5142ab6f-6733-4ab8-b7c5-8d3f767d15e6/public_url" target="_blank" rel="noopener noreferrer">AWS Certified Data Engineer – Associate (DEA-C01)</a></li>
+                    <li><a href="https://www.credly.com/badges/d8a9d800-29b2-4eb2-a0aa-d7df434e08b2/public_url" target="_blank" rel="noopener noreferrer">AWS Certified CloudOps Engineer – Associate (SOA-C03)</a></li>
+                    <li><a href="https://www.credly.com/badges/80ce77bc-67aa-4782-858e-e15ca23e03c0/public_url" target="_blank" rel="noopener noreferrer">AWS Certified Developer – Associate (DVA-C02)</a></li>
+                </ul>
             </div>
-            
+
             <h4 class="collapsible-company">Soda</h4>
             <div class="company-content">
                 <ul>
-                    <li>
-                        <h5 class="collapsible-project">
-                            <a href="https://www.virtualbadge.io/certificate-validator?credential=b0a12156-245b-4d4d-b64d-b518037ee33e" target="_blank" rel="noopener noreferrer">
-                                Soda Certified: Cloud Fundamentals
-                            </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>Soda Certified: Cloud Fundamentals</strong> demonstrating proficiency in cloud-based data quality fundamentals.
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="https://www.virtualbadge.io/certificate-validator?credential=b0a12156-245b-4d4d-b64d-b518037ee33e" target="_blank" rel="noopener noreferrer">Soda Certified: Cloud Fundamentals</a></li>
                 </ul>
             </div>
-            
-            <h4 class="collapsible-company">SAS</h4>
-            <div class="company-content">
-                <ul>
-                    <li>
-                        <h5 class="collapsible-project">
-                            <a href="https://www.credly.com/badges/83f50af0-4721-4eff-8110-d8c27c21245e/linked_in_profile" target="_blank" rel="noopener noreferrer">
-                                SAS Certified Specialist: Base Programming Using SAS 9.4
-                            </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>SAS Certified Specialist: Base Programming Using SAS 9.4</strong> demonstrating proficiency in SAS base programming fundamentals.
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
+
             <h4 class="collapsible-company">Microsoft</h4>
             <div class="company-content">
                 <ul>
-                    <li>
-                        <h5 class="collapsible-project">
-                            <a href="https://www.credly.com/badges/342bbe8b-e7c9-48a2-8047-0f5615310b11/linked_in_profile" target="_blank" rel="noopener noreferrer">
-                                Microsoft Certified: Azure AI Fundamentals
-                            </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>Microsoft Certified: Azure AI Fundamentals</strong> demonstrating foundational knowledge of AI concepts and Azure AI services.
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <h5 class="collapsible-project">
-                            <a href="https://www.credly.com/badges/840565bc-1c5e-424a-b625-822c11a114a4/linked_in_profile" target="_blank" rel="noopener noreferrer">
-                                Microsoft Certified: Azure Data Fundamentals
-                            </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>Microsoft Certified: Azure Data Fundamentals</strong> demonstrating foundational knowledge of core data concepts and Azure data services.
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <h5 class="collapsible-project">
-                            <a href="https://www.credly.com/badges/2b9c2958-b12d-4d21-9e7a-038561cd7eed/linked_in_profile" target="_blank" rel="noopener noreferrer">
-                                Microsoft Certified: Azure Fundamentals
-                            </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    <strong>Microsoft Certified: Azure Fundamentals</strong> demonstrating foundational knowledge of cloud services and Azure core concepts.
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="https://www.credly.com/badges/342bbe8b-e7c9-48a2-8047-0f5615310b11/linked_in_profile" target="_blank" rel="noopener noreferrer">Microsoft Certified: Azure AI Fundamentals</a></li>
+                    <li><a href="https://www.credly.com/badges/840565bc-1c5e-424a-b625-822c11a114a4/linked_in_profile" target="_blank" rel="noopener noreferrer">Microsoft Certified: Azure Data Fundamentals</a></li>
+                    <li><a href="https://www.credly.com/badges/2b9c2958-b12d-4d21-9e7a-038561cd7eed/linked_in_profile" target="_blank" rel="noopener noreferrer">Microsoft Certified: Azure Fundamentals</a></li>
+                </ul>
+            </div>
+
+            <h4 class="collapsible-company">SAS</h4>
+            <div class="company-content">
+                <ul>
+                    <li><a href="https://www.credly.com/badges/83f50af0-4721-4eff-8110-d8c27c21245e/linked_in_profile" target="_blank" rel="noopener noreferrer">SAS Certified Specialist: Base Programming Using SAS 9.4</a></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Other Achievements -->
-    <section>
-        <h2 class="section-title collapsible-section">Other Achievements</h2>
+    <!-- Achievements -->
+    <section class="no-print-break">
+        <h2 class="section-title collapsible-section">Achievements</h2>
         <div class="section-content">
             <h4 class="collapsible-company">Hackathon</h4>
             <div class="company-content">
@@ -1030,7 +871,7 @@
 
     <!-- Footer -->
     <footer class="footer text-center mt-5">
-        <p class="mt-4 mb-2">&copy; 2025 Gueulette Arnaud. All rights reserved.</p>
+        <p class="mt-4 mb-2">&copy; 2026 Arnaud Gueulette. All rights reserved.</p>
     </footer>
 </div>
 
@@ -1042,10 +883,10 @@
         
         collapsibleSections.forEach(section => {
             const content = section.nextElementSibling;
-            
-            // Initialize as collapsed
-            section.classList.remove('expanded');
-            content.classList.remove('expanded');
+
+            // Initialize as expanded so recruiters see full content by default
+            section.classList.add('expanded');
+            content.classList.add('expanded');
             
             section.addEventListener('click', function() {
                 const isExpanded = this.classList.contains('expanded');
@@ -1085,9 +926,9 @@
             
             if (!content) return; // Safety check
             
-            // Initialize as collapsed
-            company.classList.remove('expanded');
-            content.classList.remove('expanded');
+            // Initialize as expanded so recruiters see full content by default
+            company.classList.add('expanded');
+            content.classList.add('expanded');
             
             company.addEventListener('click', function(e) {
                 // Don't trigger if clicking on the link
@@ -1122,9 +963,9 @@
         collapsibleProjects.forEach(project => {
             const content = project.nextElementSibling;
             
-            // Initialize as collapsed
-            project.classList.remove('expanded');
-            content.classList.remove('expanded');
+            // Initialize as expanded so recruiters see full content by default
+            project.classList.add('expanded');
+            content.classList.add('expanded');
             
             project.addEventListener('click', function(e) {
                 // Don't trigger if clicking on the link
@@ -1159,9 +1000,9 @@
         collapsibleSkills.forEach(skill => {
             const content = skill.nextElementSibling;
             
-            // Initialize as collapsed
-            skill.classList.remove('expanded');
-            content.classList.remove('expanded');
+            // Initialize as expanded so recruiters see full content by default
+            skill.classList.add('expanded');
+            content.classList.add('expanded');
             
             skill.addEventListener('click', function() {
                 const isExpanded = this.classList.contains('expanded');
