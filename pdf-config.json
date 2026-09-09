@@ -1,16 +1,16 @@
 {
   "pdf": {
     "format": "A4",
-    "scale": 0.95,
+    "scale": 0.9,
     "printBackground": true,
     "preferCSSPageSize": false,
     "displayHeaderFooter": false,
     "omitBackground": false,
     "margin": {
-      "top": "25mm",
-      "bottom": "25mm",
-      "left": "10mm",
-      "right": "10mm"
+      "top": "22mm",
+      "bottom": "22mm",
+      "left": "18mm",
+      "right": "18mm"
     }
   },
   "viewport": {

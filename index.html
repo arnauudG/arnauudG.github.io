@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arnaud Gueulette - Data & AI Governance Solutions Architect specializing in trustworthy data, analytics, and AI across Collibra, AWS, and Azure.">
+    <meta name="description" content="Arnaud Gueulette - Data & AI Governance Solutions Architect combining cloud and data platforms, DevSecOps, technical governance, and AI enablement across AWS, Azure, Snowflake, and Collibra.">
     <meta name="keywords" content="Data Governance, Data Governance Consultant, Collibra, AWS, Azure, Metadata Management, Data Quality, Reference Data, AI-ready Governance, Data Platform, Data Architecture, Arnaud Gueulette, CV, Resume">
     <meta name="author" content="Arnaud Gueulette">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Arnaud Gueulette - Data & AI Governance Solutions Architect">
-    <meta property="og:description" content="Data & AI Governance Solutions Architect specializing in trustworthy data, analytics, and AI across Collibra, AWS, and Azure.">
+    <meta property="og:description" content="Data & AI Governance Solutions Architect combining cloud and data platforms, DevSecOps, technical governance, and AI enablement across AWS, Azure, Snowflake, and Collibra.">
     <meta property="og:type" content="profile">
     <title>Arnaud Gueulette - Data & AI Governance Solutions Architect | CV</title>
     <!-- Favicon -->
@@ -382,6 +382,10 @@
             max-height: 5000px;
             opacity: 1;
         }
+        .company-content + .collapsible-company {
+            margin-top: 32px;
+            padding-top: 12px;
+        }
         .collapsible-project {
             cursor: pointer;
             user-select: none;
@@ -462,6 +466,14 @@
             opacity: 1;
         }
         @media print {
+            .container.mt-5 {
+                margin-top: 0 !important;
+                padding: 10px 30px;
+            }
+            .section-title {
+                padding-bottom: 5px !important;
+                margin-bottom: 20px !important;
+            }
             #theme-toggle-wrapper {
                 display: none !important;
             }
@@ -489,7 +501,17 @@
             section {
                 page-break-inside: auto;
                 break-inside: auto;
-                margin-bottom: 18px;
+                margin-top: 36px !important;
+                margin-bottom: 36px;
+            }
+            header + section {
+                margin-top: 0 !important;
+            }
+            .print-keep-together {
+                break-inside: avoid !important;
+            }
+            .print-page-start {
+                break-before: page;
             }
             h2, h4, h5 {
                 page-break-after: avoid;
@@ -520,10 +542,6 @@
             .collapsible-skill-category::after {
                 display: none;
             }
-            .print-page-break {
-                page-break-before: always;
-                break-before: page;
-            }
             .btn-download-pdf {
                 display: none !important;
             }
@@ -550,7 +568,7 @@
         <img class="profile-image" src="https://arnauudg.github.io/assets/profile-picture.jpeg" alt="Profile Photo">
         <h1>Arnaud Gueulette</h1>
         <p class="lead mb-1">Data & AI Governance Solutions Architect</p>
-        <p class="header-capabilities">Collibra, AWS, Azure | Metadata, Data Quality, Reference Data & AI-ready Governance</p>
+        <p class="header-capabilities">Cloud & Data Platforms | Architecture | DevSecOps & Technical Governance | AI Enablement</p>
         <p><strong>Location:</strong> Brussels, Belgium | <strong>Phone:</strong> +32 488 69 25 31 | <strong>Email:</strong> arnaud_gueulette@outlook.fr</p>
         <p style="margin-top: 15px; margin-bottom: 10px;">
             <a href="https://www.linkedin.com/in/arnaud-gueulette/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><img src="https://arnauudg.github.io/assets/linkedin-mark.png" width="25" height="25" alt="LinkedIn" style="vertical-align: middle;"></a>
@@ -570,13 +588,7 @@
     <section>
         <h2 class="section-title">Professional Summary</h2>
         <p>
-            Data & AI Governance Solutions Architect helping organizations make data, analytics, and AI use cases trustworthy by embedding governance directly into platforms, metadata, workflows, data quality controls, reference data, and cloud operations.
-        </p>
-        <p>
-            Hands-on across Collibra, AWS, and Azure, with experience translating governance principles into working systems: metadata and asset models, data quality checks, lineage, BPMN workflows, reference data controls, platform automation, and operational guardrails for reliable data and AI-enabled decision-making.
-        </p>
-        <p>
-            Current focus: AI-ready governance through governed metadata, reference data, context management, Collibra MCP experimentation, and cloud-based governance automation.
+            Data & AI Solutions Architect combining cloud and platform engineering, data architecture, and technical governance. Hands-on with AWS, Azure, Snowflake, Collibra, Python, SQL, and Terraform, leading DEV and PROD infrastructure, CI/CD automation, platform migrations, security controls, metadata, data quality, and reference data capabilities. Experienced in translating governance and business requirements into production-grade cloud platforms and AI-ready data solutions.
         </p>
     </section>
 
@@ -589,50 +601,53 @@
             <div class="company-content">
             <ul>
                 <li>
-                    Operationalizing governance-by-design for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> across <strong>Collibra Data Intelligence Platform</strong>, <strong>Collibra Data Quality</strong>, metadata ingestion, lineage, reference data, and AWS platform capabilities, turning governance requirements into reusable workflows, controls, and operational patterns.
+                    Leading cloud infrastructure and platform engineering for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a>'s data governance capabilities across <strong>DEV and PROD</strong>, designing and operating AWS infrastructure supporting Collibra Data Quality, metadata ingestion, lineage, and technical governance.
                 </li>
                 <li>
-                    Designing and deploying AWS-based governance automation for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> using <strong>EKS</strong>, <strong>Lambda</strong>, <strong>EventBridge</strong>, <strong>RDS</strong>, Terraform, Terragrunt, Docker, Kubernetes, and CloudWatch to improve data quality monitoring, metadata operations, and platform reliability.
+                    Designing reusable AWS infrastructure and automation for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> using <strong>EKS, Lambda, EventBridge, RDS, Terraform, Terragrunt, Docker, Kubernetes</strong>, and <strong>GitLab CI/CD</strong>, standardizing deployments and lifecycle operations across environments.
                 </li>
                 <li>
-                    Implementing Collibra Data Quality, metadata ingestion pipelines, BPMN workflows, and platform monitoring patterns for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> to move governance from documentation into operational processes, enabling new lineage visibility and more reliable governance operations.
+                    Leading production infrastructure lifecycle and migration activities for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a>, including RDS and Collibra DQ metastore migration and optimization, DMS/CDC decommissioning, EventBridge integration updates, encrypted snapshot validation, and CI/CD-driven infrastructure teardown.
+                </li>
+                <li>
+                    Engineering cloud security and vulnerability-management controls into <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a>'s delivery pipeline by addressing <strong>AWS Inspector</strong> findings, integrating automated security scanning into CI/CD, and developing policy-as-code and resource-tag enforcement patterns for IaC and CI/CD.
+                </li>
+                <li>
+                    Implementing and operating data quality, metadata, and lineage integrations for <a href="https://www.scania.com" target="_blank" rel="noopener noreferrer">Scania CV</a> across AWS, Snowflake, and Collibra, including connectivity, authentication, permissions, monitoring, production troubleshooting, and reusable deployments for Soda Agent and Collibra DQ standalone.
                 </li>
                 <li>
                     Leading the design and delivery of product reference data improvements for <a href="https://www.ucb.com" target="_blank" rel="noopener noreferrer">UCB</a> across Snowflake and external systems, resolving inconsistent identifiers and designing exact, hierarchical, and fuzzy-matching approaches to raise completeness and consistency.
                 </li>
                 <li>
-                    Leading the design, development, and delivery of AI-enabled governance initiatives for <a href="https://www.ucb.com" target="_blank" rel="noopener noreferrer">UCB</a>, including Collibra MCP experimentation for natural-language metadata discovery and a policy-aware M365 Copilot agent for compliant Collibra asset submissions, built on structured templates, JSON schemas, Excel import logic, and scenario-based testing.
+                    Designing and developing AI-enabled governance initiatives for <a href="https://www.ucb.com" target="_blank" rel="noopener noreferrer">UCB</a>, including Collibra MCP experimentation for natural-language metadata discovery and a policy-aware M365 Copilot agent to guide Collibra asset submissions using structured templates, JSON schemas, Excel import logic, and scenario-based testing.
                 </li>
                 <li>
                     Leading the standardization of SQL-based data quality checks across multiple domains for <a href="https://www.ucb.com" target="_blank" rel="noopener noreferrer">UCB</a>, introducing structured templates, reusable query logic, and consistent validation standards.
                 </li>
-                <li>
-                    Developed reusable AWS deployment frameworks using Terraform and Terragrunt for Soda Agent and Collibra DQ standalone with an external RDS metastore, enabling faster Infrastructure-as-Code deployments.
-                </li>
             </ul>
         </div>
 
-            <h4 class="collapsible-company">Data Engineer / Software & Data Consultant, <strong><a href="https://www.soprasteria.be" target="_blank" rel="noopener noreferrer">Sopra Steria Benelux</a></strong></h4>
+            <h4 class="collapsible-company print-page-start">Data Engineer / Software & Data Consultant, <strong><a href="https://www.soprasteria.be" target="_blank" rel="noopener noreferrer">Sopra Steria Benelux</a></strong></h4>
             <p><em>Sept 2022 – Jan 2025</em></p>
             <div class="company-content">
             <ul>
                 <li>
-                    Enhanced and maintained <a href="https://www.eulisa.europa.eu" target="_blank" rel="noopener noreferrer">eu-LISA</a>'s border-security systems (Schengen Information System) by developing, testing, and deploying improvements in PREPROD, ensuring reliability, performance, documentation quality, and alignment with EU-standard delivery requirements.
+                    <strong>Schengen Information System, <a href="https://www.eulisa.europa.eu" target="_blank" rel="noopener noreferrer">eu-LISA</a>:</strong> enhanced and maintained border-security systems by developing, testing, and deploying improvements in PREPROD, ensuring reliability, performance, documentation quality, and alignment with EU-standard delivery requirements.
                 </li>
                 <li>
-                    Designed and deployed a multi-step flight-forecasting model as an online <strong>API endpoint</strong> for <a href="https://www.eurocontrol.int" target="_blank" rel="noopener noreferrer">Eurocontrol</a>'s ISOBAR project to help operators optimize arrival and departure flows under varying weather conditions, reducing manual workload and supporting data-driven operational decisions.
+                    <strong>ISOBAR Flight Forecasting, <a href="https://www.eurocontrol.int" target="_blank" rel="noopener noreferrer">EUROCONTROL</a>:</strong> assessed third-party data providers through exploratory data analysis and comparative evaluation, contributing to the team's provider selection. Designed and deployed a multi-step flight-forecasting model as an online <strong>API endpoint</strong> to help operators optimize arrival and departure flows under varying weather conditions, reducing manual workload and supporting data-driven operational decisions.
                 </li>
                 <li>
-                    Built an end-to-end pipeline to extract and process PDF-based energy-consumption invoices into the <strong>SAS IBM Envizi ESG Suite</strong>, improving <strong>ESG reporting</strong> and internal analytics.
+                    <strong>Internal Projects - ESG Data Automation:</strong> built an end-to-end pipeline to extract and process PDF-based energy-consumption invoices into the <strong>SAS IBM Envizi ESG Suite</strong>, improving <strong>ESG reporting</strong> and internal analytics.
                 </li>
                 <li>
-                    Delivered a <strong>PoC</strong> data system surfacing energy-invoice <strong>KPIs</strong> to support sustainability tracking, reporting, and cost-efficiency analysis.
+                    <strong>Internal Projects - Analytics PoC:</strong> delivered a <strong>PoC</strong> data system surfacing energy-invoice <strong>KPIs</strong> to support sustainability tracking, reporting, and cost-efficiency analysis.
                 </li>
                 <li>
-                    Researched and documented AI-assisted development tools, including <strong>GitHub Copilot</strong> and prompt engineering practices, to evaluate <strong>SDLC</strong> productivity gains and privacy implications.
+                    <strong>Internal Projects - AI-assisted Development:</strong> researched and documented AI-assisted development tools, including <strong>GitHub Copilot</strong> and prompt engineering practices, to evaluate <strong>SDLC</strong> productivity gains and privacy implications.
                 </li>
                 <li>
-                    Prototyped <strong>Elasticsearch</strong> integration into existing data systems to improve search performance and query expressiveness.
+                    <strong>Internal Projects - Search:</strong> prototyped <strong>Elasticsearch</strong> integration with an existing <strong>Oracle</strong> system to improve search performance and query expressiveness.
                 </li>
             </ul>
             </div>
@@ -640,20 +655,20 @@
     </section>
 
     <!-- Selected Projects & Focus Areas -->
-    <section>
-        <h2 class="section-title collapsible-section">Selected Governance Architecture Focus Areas</h2>
+    <section class="print-keep-together">
+        <h2 class="section-title collapsible-section">Selected Architecture Focus Areas</h2>
         <div class="section-content">
             <ul>
                 <li><strong>Reference Data Governance in Collibra</strong><br>Designed a practical governance model for Code Sets, Code Values, Crosswalks, lifecycle states, stewardship roles, workflows, and trusted consumption patterns, distinguishing accepted, implemented, and actively consumed reference data.</li>
                 <li><strong>AI-ready Context Governance</strong><br>Developed a practical approach for using governed business, technical, operational, and policy context to support trustworthy AI agents, GenBI use cases, metadata-driven discovery, and Collibra MCP experimentation.</li>
-                <li><strong>Cloud Data Governance Operations</strong><br>Supported AWS-based governance infrastructure, automation, monitoring, and platform reliability for Collibra Data Quality, metadata ingestion, lineage, and operational governance processes.</li>
+                <li><strong>Cloud Platform & Technical Governance</strong><br>Designed and operated AWS-based DEV and PROD infrastructure, automation, security controls, and platform lifecycle processes supporting data quality, metadata, lineage, and technical governance.</li>
             </ul>
         </div>
     </section>
 
     <!-- Education -->
     <section>
-        <h2 class="section-title collapsible-section print-page-break">Education</h2>
+        <h2 class="section-title collapsible-section">Education</h2>
         <div class="section-content">
             <h4 class="collapsible-company">Master's Degree in Data Science, <a href="https://www.uclouvain.be/en" target="_blank" rel="noopener noreferrer">Université Catholique de Louvain</a></h4>
             <p><em>2020 – 2023</em></p>
@@ -694,8 +709,8 @@
                         <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">AWS S3, EC2, RDS, Glue, Athena, Lambda, Lake Formation, EventBridge, EKS, CloudWatch, IAM, SQS, SNS; Azure Data Lake, Data Factory, Synapse Analytics, Azure AI Services</p>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Infrastructure as Code & DevOps</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Terraform, Terragrunt, Docker, Kubernetes, Helm, Rancher, GitLab&nbsp;CI/CD, GitHub Actions</p>
+                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Infrastructure as Code & DevSecOps</strong>
+                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Terraform, Terragrunt, Docker, Kubernetes, Helm, Rancher, GitLab&nbsp;CI/CD, GitHub Actions, AWS Inspector, Policy-as-Code, Security Scanning</p>
                     </div>
                 </td>
                 <td style="width:50%; padding-left:20px; vertical-align: top;">
@@ -707,10 +722,6 @@
                         <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Data Systems & Analytics</strong>
                         <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Snowflake, PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Elasticsearch, Power BI, Apache Superset, Grafana, Kibana</p>
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 2px; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">Collaboration & Delivery</strong>
-                        <p style="margin: 0; line-height: 1.6; color: var(--text-primary);">Git, Jira, Confluence, Power Automate, Agile Delivery, Technical Documentation</p>
-                    </div>
                 </td>
             </tr>
         </table>
@@ -718,12 +729,13 @@
     </section>
 
     <!-- Certifications -->
-    <section>
+    <section class="print-keep-together">
         <h2 class="section-title collapsible-section">Certifications</h2>
         <div class="section-content">
             <h4 class="collapsible-company">Collibra</h4>
             <div class="company-content">
                 <ul>
+                    <li>Collibra Ranger Certification</li>
                     <li><a href="https://www.credly.com/badges/2171017b-65fd-45a4-9120-e22b8e9c189e/public_url" target="_blank" rel="noopener noreferrer">Collibra Solution Architect Certification</a></li>
                 </ul>
             </div>
@@ -769,22 +781,13 @@
         <div class="section-content">
             <h4 class="collapsible-company">Hackathon</h4>
             <div class="company-content">
-        <ul>
-            <li>
-                        <h5 class="collapsible-project">
-                    <a href="https://eudis-hackathon.eu/winners/" target="_blank" rel="noopener noreferrer">
-                        EU Defence Innovation Scheme (EUDIS) – Hackathon 2024
-                    </a>
-                        </h5>
-                        <div class="project-content">
-                            <ul style="margin-top: 2px;">
-                                <li>
-                                    Team EUnify – 1<sup>st</sup> (Belgium) – 3<sup>rd</sup> (Europe)
-                                </li>
-                            </ul>
-                        </div>
-            </li>
-        </ul>
+                <ul>
+                    <li>
+                        <a href="https://eudis-hackathon.eu/winners/" target="_blank" rel="noopener noreferrer">
+                            <strong>EU Defence Innovation Scheme (EUDIS) Hackathon 2024 - 1st Belgium, 3rd Europe</strong>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
